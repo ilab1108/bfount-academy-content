@@ -1,0 +1,259 @@
+# Builds courses/digital-marketing-for-beginners.json (kept as Python for readable multi-line HTML).
+import json, os
+
+course = {
+  "title": "Digital Marketing for Beginners",
+  "slug": "digital-marketing-for-beginners",
+  "category_id": 1,
+  "level": "beginner",
+  "icon": "🌐",
+  "sort_order": 15,
+  "summary": "Your first map of digital marketing: websites and SEO, social media, email, paid ads and analytics — how each channel works, when to use it, and how to measure results.",
+  "outcomes": "\n".join([
+    "Explain how the main digital channels work together in one simple funnel",
+    "Make a website page easier to find in search with basic on-page SEO",
+    "Plan a month of useful social media posts for a small business",
+    "Set up a simple welcome email that turns sign-ups into customers",
+    "Choose between Google Ads and Meta Ads for a first small test",
+    "Track five numbers that show whether marketing is working",
+  ]),
+  "description": "<p>Digital marketing can feel like a hundred tools and a thousand opinions. This course gives you a clear map. You will learn what each main channel does — search, social, email, paid ads and analytics — how they connect, and which to start with for a real business.</p><p>Every lesson is short and practical, with a real-world example, a checklist and a small assignment. By the end you will have a one-page digital marketing plan you can use for your own business, a client or a job interview.</p>",
+  "project": "Write a one-page digital marketing plan for a real or imaginary small business: the customer and offer, the funnel (attract → capture → convert), two channels to start with and why, one month of content ideas, a welcome email, a small paid-ads test with a budget, and the five numbers you will track each week.",
+  "status": "published",
+  "modules": [
+    {"title": "Module 1 · The digital marketing map", "lessons": []},
+    {"title": "Module 2 · Channels that bring customers", "lessons": []},
+  ],
+}
+
+L = []
+
+L.append({"module": 0, "title": "What digital marketing is and how the channels fit together", "slug": "what-is-digital-marketing", "minutes": 10, "free_preview": True,
+"intro": "Digital marketing is how a business gets found, earns attention and wins customers online. In this lesson you will see the main channels on one simple map and learn how they work together as a funnel.",
+"body": """<h2>The one-sentence definition</h2>
+<p>Digital marketing is everything a business does online to <strong>attract</strong> the right people, <strong>capture</strong> their interest and <strong>convert</strong> them into customers — and then keep them coming back.</p>
+<h2>The main channels</h2>
+<table>
+<thead><tr><th>Channel</th><th>What it does best</th><th>Speed</th><th>Main cost</th></tr></thead>
+<tbody>
+<tr><td>Website + SEO</td><td>Gets you found by people already searching</td><td>Slow (months)</td><td>Time and content</td></tr>
+<tr><td>Social media</td><td>Builds attention, trust and community</td><td>Medium</td><td>Time and creativity</td></tr>
+<tr><td>Email</td><td>Turns interest into sales and repeat sales</td><td>Fast once you have a list</td><td>Low</td></tr>
+<tr><td>Paid ads</td><td>Buys targeted attention on demand</td><td>Fast (days)</td><td>Ad spend</td></tr>
+<tr><td>Analytics</td><td>Shows what works so you can do more of it</td><td>Ongoing</td><td>Setup time</td></tr>
+</tbody>
+</table>
+<h2>The simple funnel</h2>
+<ol>
+<li><strong>Attract:</strong> search, social posts and ads bring visitors.</li>
+<li><strong>Capture:</strong> a landing page or offer turns visitors into leads (email, phone, sign-up).</li>
+<li><strong>Convert:</strong> emails, follow-up calls and good offers turn leads into customers.</li>
+<li><strong>Retain:</strong> email and great service bring customers back and get them talking.</li>
+</ol>
+<p>Every channel fits somewhere in this funnel. Beginners often pour effort into "attract" and forget "capture" — then wonder why traffic doesn't turn into sales.</p>
+<h2>Where should a beginner start?</h2>
+<ul>
+<li>If people already search for what you sell → start with a good website page and basic SEO, then Google Ads.</li>
+<li>If your product is visual or impulse-friendly → start with social media and Meta Ads.</li>
+<li>In every case → start collecting emails from day one.</li>
+</ul>""",
+"example": "<p>A small yoga studio posted on Instagram every day but got few bookings. When they added a simple \"first class free\" landing page (capture) and a three-email welcome sequence (convert), the same amount of social activity started producing regular bookings. The traffic was never the problem — the missing steps were.</p>",
+"checklist": "I can explain digital marketing in one sentence\nI know the five main channels and what each does best\nI can draw the attract → capture → convert → retain funnel\nI know where my business should start",
+"assignment": "<p>Pick a real or imaginary business. Write one line for each funnel stage: how you will attract people, what you will offer to capture them, how you will convert them, and how you will bring them back.</p>",
+"video_script": "Hook: More followers didn't mean more customers — here's why.\nDefinition: attract, capture, convert, retain.\nThe five channels and what each is best at.\nThe funnel, step by step.\nWhere a beginner should start.\nAssignment: write your four-line funnel.",
+"quiz": [
+  {"q": "Which stage turns a website visitor into a lead?", "opts": ["Attract", "Capture", "Retain", "Report"], "correct": 1, "exp": "Capture is where a visitor gives you a way to follow up — an email, phone number or sign-up."},
+  {"q": "Which channel is usually the fastest way to get targeted visitors?", "opts": ["SEO", "Paid ads", "Email newsletters", "Word of mouth"], "correct": 1, "exp": "Paid ads can bring visitors within days; SEO usually takes months."},
+  {"q": "What should every business start doing from day one?", "opts": ["Posting on every social network", "Collecting email addresses", "Buying followers", "Running TV ads"], "correct": 1, "exp": "An email list is an audience you own and can reach at low cost."},
+]})
+
+L.append({"module": 0, "title": "Your website and SEO: getting found on Google", "slug": "website-and-seo-basics", "minutes": 12, "free_preview": False,
+"intro": "Search engine optimisation (SEO) helps the right people find your website when they search on Google. This lesson covers what makes a page rank and the basic on-page steps any beginner can do today.",
+"body": """<h2>How Google decides what to show</h2>
+<p>Google tries to show the page that best answers what someone searched for. In simple terms it looks at three things:</p>
+<ul>
+<li><strong>Relevance:</strong> does the page clearly answer this search?</li>
+<li><strong>Quality and trust:</strong> is it helpful, accurate and from a credible site that other sites link to?</li>
+<li><strong>Experience:</strong> does it load fast and work well on a phone?</li>
+</ul>
+<h2>Keywords: the words your customers use</h2>
+<p>A keyword is what people type into Google. Pick one main keyword per page — ideally a specific phrase like "wedding photographer in Pune" rather than a broad one like "photographer". Specific phrases have less competition and attract people who are closer to buying.</p>
+<h2>The on-page basics</h2>
+<ol>
+<li><strong>Title tag:</strong> include the keyword and a reason to click (under about 60 characters).</li>
+<li><strong>Meta description:</strong> a 1–2 sentence summary that earns the click.</li>
+<li><strong>One clear H1 heading</strong> that matches the search.</li>
+<li><strong>Helpful content</strong> that answers the question fully, with subheadings people can scan.</li>
+<li><strong>Internal links</strong> to related pages on your site.</li>
+<li><strong>Fast, mobile-friendly pages</strong> with compressed images.</li>
+</ol>
+<h2>Local SEO in one step</h2>
+<p>If you serve customers in a specific area, create and complete a free <strong>Google Business Profile</strong>. It can put you on the map results, often above everything else on the page.</p>
+<p>SEO takes time — usually months — but it keeps working after you stop paying, which is why it pairs well with faster channels like ads.</p>""",
+"example": "<p>A local plumber's home page had the title \"Home\". Changing it to \"Emergency Plumber in Leeds — 60-Minute Call-Out\", adding a services section that answered common questions, and completing their Google Business Profile helped them appear for local searches they had been invisible for.</p>",
+"checklist": "Each important page targets one main keyword\nTitle and meta description include the keyword and a reason to click\nThe page answers the search fully with clear subheadings\nThe page loads fast and works on a phone\nMy Google Business Profile is complete (if I serve a local area)",
+"assignment": "<p>Choose one page of your website (or a competitor's). Write a better title tag and meta description for it, and list three questions customers ask that the page should answer.</p>",
+"video_script": "Hook: A plumber's page called 'Home' — and why it never ranked.\nHow Google chooses results: relevance, trust, experience.\nKeywords: specific beats broad.\nSix on-page basics.\nLocal SEO: Google Business Profile.\nAssignment: rewrite one title and meta description.",
+"quiz": [
+  {"q": "Which keyword is usually easier for a small business to rank for?", "opts": ["Shoes", "Running shoes for flat feet", "Footwear", "Buy"], "correct": 1, "exp": "Specific long-tail phrases have less competition and show clearer buying intent."},
+  {"q": "What is a title tag?", "opts": ["The name of your business", "The clickable headline shown in search results", "A hashtag on Instagram", "The website's domain name"], "correct": 1, "exp": "The title tag is the headline Google usually shows for your page in results."},
+  {"q": "What helps a local business appear in Google Maps results?", "opts": ["A complete Google Business Profile", "More Instagram posts", "A longer domain name", "Paying for email software"], "correct": 0, "exp": "A complete, accurate Google Business Profile is the foundation of local SEO."},
+]})
+
+L.append({"module": 0, "title": "Social media and content: earning attention", "slug": "social-media-and-content-basics", "minutes": 12, "free_preview": False,
+"intro": "Social media builds attention and trust — but only if you post things your audience actually wants. Learn how to choose platforms, plan content pillars and post consistently without burning out.",
+"body": """<h2>Choose platforms, don't chase them</h2>
+<p>Pick one or two platforms where your customers already spend time:</p>
+<table>
+<thead><tr><th>Platform</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Instagram</td><td>Visual products, local businesses, lifestyle brands</td></tr>
+<tr><td>Facebook</td><td>Local communities, groups, older audiences</td></tr>
+<tr><td>LinkedIn</td><td>B2B, professional services, careers</td></tr>
+<tr><td>TikTok / YouTube Shorts</td><td>Reaching new, younger audiences with short video</td></tr>
+<tr><td>YouTube</td><td>How-to content people search for</td></tr>
+</tbody>
+</table>
+<h2>Content pillars</h2>
+<p>Pick three or four themes you will post about again and again. For a bakery that might be: behind the scenes, new products, baking tips, and happy customers. Pillars make planning easy and help people know what to expect.</p>
+<h2>The 3-part post formula</h2>
+<ol>
+<li><strong>Hook:</strong> the first line or first second must stop the scroll.</li>
+<li><strong>Value:</strong> teach, show, entertain or inspire.</li>
+<li><strong>Next step:</strong> a soft call to action — save, comment, visit, book.</li>
+</ol>
+<h2>Consistency beats volume</h2>
+<p>Three good posts a week for six months beat thirty posts in one week and then silence. Batch-create content once a week and schedule it.</p>
+<h2>Don't forget "capture"</h2>
+<p>Followers belong to the platform. Regularly invite people to your website, a free guide or your email list so you can reach them directly.</p>""",
+"example": "<p>An accountant started posting one short \"tax tip of the week\" video on LinkedIn and Instagram, always ending with \"Get the free deadline calendar\" linked to a sign-up page. Within a few months the calendar sign-ups became his main source of new client enquiries.</p>",
+"checklist": "I chose one or two platforms where my customers spend time\nI have three or four content pillars\nEvery post has a hook, value and a next step\nI batch-create and schedule content each week\nI regularly invite followers to my website or email list",
+"assignment": "<p>Write your three or four content pillars and plan four posts for next week — one line each for the hook, the value and the next step.</p>",
+"video_script": "Hook: The accountant whose tax tips became his best lead source.\nPick platforms where customers already are.\nContent pillars.\nHook, value, next step.\nConsistency over volume.\nMove followers to your own list.\nAssignment: plan four posts.",
+"quiz": [
+  {"q": "What is a content pillar?", "opts": ["A paid ad format", "A recurring theme you post about", "A type of hashtag", "A social media platform"], "correct": 1, "exp": "Pillars are the 3–4 themes that make your content easy to plan and recognise."},
+  {"q": "Which platform is usually best for B2B and professional services?", "opts": ["LinkedIn", "Pinterest", "Snapchat", "Twitch"], "correct": 0, "exp": "LinkedIn is where decision-makers and professionals spend time."},
+  {"q": "Why invite social followers to your email list?", "opts": ["Platforms ban businesses that don't", "You own the list and can reach people directly", "Emails are always free to send", "It improves your follower count"], "correct": 1, "exp": "Followers belong to the platform; your email list belongs to you."},
+]})
+
+L.append({"module": 1, "title": "Email marketing: the channel you own", "slug": "email-marketing-basics", "minutes": 11, "free_preview": False,
+"intro": "Email is the most reliable way to turn interest into sales because you own the list. Learn how to grow a list with a lead magnet and write a simple welcome sequence that converts.",
+"body": """<h2>Why email still matters</h2>
+<p>Social reach goes up and down with every algorithm change. Your email list doesn't. Once someone joins, you can reach them whenever you have something useful to say — at very low cost.</p>
+<h2>Grow your list with a lead magnet</h2>
+<p>People give their email in exchange for something useful. Good lead magnets are quick to use and closely related to what you sell:</p>
+<ul>
+<li>A checklist or template ("Wedding planning checklist")</li>
+<li>A discount or free trial ("10% off your first order")</li>
+<li>A short guide or mini-course ("5-day beginner workout plan")</li>
+<li>A quiz or calculator result</li>
+</ul>
+<h2>The 3-email welcome sequence</h2>
+<ol>
+<li><strong>Email 1 (immediately):</strong> deliver what you promised, say who you are, and set expectations.</li>
+<li><strong>Email 2 (day 2):</strong> share your most helpful tip or a customer story.</li>
+<li><strong>Email 3 (day 4):</strong> make a clear offer with one call to action.</li>
+</ol>
+<h2>Write emails people open</h2>
+<ul>
+<li>Subject lines that are clear, specific and curious — not shouty.</li>
+<li>One idea and one call to action per email.</li>
+<li>Short paragraphs that read well on a phone.</li>
+</ul>
+<h2>The numbers to watch</h2>
+<p>Track <strong>open rate</strong> (are subject lines working?), <strong>click rate</strong> (is the content and offer interesting?) and <strong>unsubscribe rate</strong> (are you sending too often or off-topic?). Always include an easy unsubscribe link and only email people who opted in.</p>""",
+"example": "<p>An online plant shop offered a free \"Plant care cheat sheet\" on every product page. A three-email welcome sequence — cheat sheet, a common watering mistake, then a first-order discount — turned a meaningful share of new subscribers into first-time buyers without any extra ad spend.</p>",
+"checklist": "I have a lead magnet closely related to what I sell\nMy sign-up form is on my most visited pages\nNew subscribers get a 3-email welcome sequence\nEach email has one idea and one call to action\nI only email people who opted in, and unsubscribing is easy",
+"assignment": "<p>Write the subject lines and a two-sentence summary for each email in your 3-email welcome sequence.</p>",
+"video_script": "Hook: A free cheat sheet that sold more plants than ads.\nWhy you own your email list.\nLead magnets that work.\nThe 3-email welcome sequence.\nOpen, click and unsubscribe rates.\nAssignment: outline your sequence.",
+"quiz": [
+  {"q": "What is a lead magnet?", "opts": ["An expensive ad campaign", "Something useful offered in exchange for an email", "A spam filter", "A type of website hosting"], "correct": 1, "exp": "A lead magnet gives people a reason to join your list."},
+  {"q": "What should the first welcome email do?", "opts": ["Ask for a five-star review", "Deliver what was promised and set expectations", "Sell your most expensive product", "Ask them to follow five social accounts"], "correct": 1, "exp": "Deliver the promise first — it builds trust for later offers."},
+  {"q": "A low click rate usually means…", "opts": ["The content or offer isn't interesting enough", "Your domain is too long", "You have too many subscribers", "Nothing — clicks don't matter"], "correct": 0, "exp": "Click rate shows whether readers want what you're offering."},
+]})
+
+L.append({"module": 1, "title": "Paid ads: Google, Meta and how to run a first test", "slug": "paid-ads-basics", "minutes": 13, "free_preview": False,
+"intro": "Paid ads buy attention on demand. Learn the difference between search ads and social ads, how to pick the right one, and how to run a small, safe first test.",
+"body": """<h2>Two kinds of ads</h2>
+<table>
+<thead><tr><th></th><th>Search ads (Google, Bing)</th><th>Social ads (Meta, TikTok, LinkedIn)</th></tr></thead>
+<tbody>
+<tr><td>How people find you</td><td>They search for what you sell</td><td>You interrupt their feed</td></tr>
+<tr><td>Intent</td><td>High — they're looking</td><td>Lower — you create the interest</td></tr>
+<tr><td>Best for</td><td>Services and products people already search for</td><td>Visual, new or impulse products; building demand</td></tr>
+<tr><td>Key skill</td><td>Keywords and offer</td><td>Creative (image/video) and audience</td></tr>
+</tbody>
+</table>
+<h2>Know your numbers before you spend</h2>
+<p>Decide the most you can afford to pay for a lead or a sale. If a customer is worth $500 in profit and one in five leads becomes a customer, you can pay at most $100 per lead to break even. This number guides every decision.</p>
+<h2>Your first small test</h2>
+<ol>
+<li>Choose <strong>one platform</strong> and <strong>one offer</strong>.</li>
+<li>Set up <strong>conversion tracking</strong> first (Google tag or Meta Pixel) so you can see leads and sales.</li>
+<li>Send traffic to a focused <strong>landing page</strong>, not your home page.</li>
+<li>Start with a <strong>small daily budget</strong> and a fixed end date.</li>
+<li>Test two or three ad variations; change one thing at a time.</li>
+<li>After enough data, keep what beats your target and pause the rest.</li>
+</ol>
+<h2>Common beginner mistakes</h2>
+<ul>
+<li>Boosting random posts without a goal.</li>
+<li>No tracking, so no way to know what worked.</li>
+<li>Judging results after one day.</li>
+<li>Targeting "everyone".</li>
+</ul>""",
+"example": "<p>A home-cleaning company ran Google search ads for \"deep cleaning service near me\" to a page with a clear price and a booking form, with conversion tracking set up first. Because they knew their maximum cost per booking, they could quickly pause keywords that cost too much and move budget to the ones that brought profitable bookings.</p>",
+"checklist": "I know whether search ads or social ads fit my offer better\nI know my maximum cost per lead or sale\nConversion tracking is set up before I spend\nAds go to a focused landing page\nI test a few variations with a small budget and an end date",
+"assignment": "<p>Calculate your maximum cost per lead using the Max CPL lab, then write two ad headlines for a first small test.</p>",
+"video_script": "Hook: Why boosting posts rarely works.\nSearch vs social ads.\nYour maximum cost per lead.\nSix steps for a safe first test.\nBeginner mistakes.\nAssignment: max CPL + two headlines.",
+"quiz": [
+  {"q": "Search ads work best when…", "opts": ["People already search for what you sell", "You have no website", "Your product is brand new and unknown", "You want more followers"], "correct": 0, "exp": "Search ads capture existing demand from people who are actively looking."},
+  {"q": "What should you set up before spending on ads?", "opts": ["A new logo", "Conversion tracking", "A TV advert", "A podcast"], "correct": 1, "exp": "Without tracking you can't tell which ads bring leads or sales."},
+  {"q": "A customer is worth $500 profit and 1 in 5 leads buys. What is the most you can pay per lead to break even?", "opts": ["$25", "$100", "$500", "$2,500"], "correct": 1, "exp": "$500 × 1/5 = $100 per lead at break-even."},
+]})
+
+L.append({"module": 1, "title": "Measuring results: five numbers every beginner should track", "slug": "measuring-marketing-results", "minutes": 11, "free_preview": False,
+"intro": "You can't improve what you don't measure. Learn the five numbers that show whether your marketing is working, where to find them, and how to set up a simple weekly report.",
+"body": """<h2>The five numbers</h2>
+<table>
+<thead><tr><th>Number</th><th>What it tells you</th><th>Formula</th></tr></thead>
+<tbody>
+<tr><td>Visitors</td><td>Is enough of the right traffic arriving?</td><td>From analytics</td></tr>
+<tr><td>Conversion rate</td><td>Does your page or offer persuade?</td><td>Leads ÷ visitors</td></tr>
+<tr><td>Cost per lead (CPL)</td><td>What each lead costs</td><td>Spend ÷ leads</td></tr>
+<tr><td>Close rate</td><td>How many leads become customers</td><td>Customers ÷ leads</td></tr>
+<tr><td>Return on ad spend (ROAS)</td><td>Revenue for each unit of ad spend</td><td>Revenue ÷ ad spend</td></tr>
+</tbody>
+</table>
+<h2>Where to find them</h2>
+<ul>
+<li><strong>Google Analytics 4 (free):</strong> visitors, traffic sources and conversions on your site.</li>
+<li><strong>Ad platforms:</strong> spend, clicks, leads and cost per lead.</li>
+<li><strong>Your CRM, spreadsheet or shop:</strong> customers and revenue.</li>
+</ul>
+<h2>Tag your links with UTMs</h2>
+<p>Add UTM parameters to links in emails, social posts and ads (for example <code>?utm_source=instagram&amp;utm_medium=social&amp;utm_campaign=spring-offer</code>). Analytics will then show exactly which post or email brought each visitor.</p>
+<h2>A 15-minute weekly report</h2>
+<ol>
+<li>Write down the five numbers for last week.</li>
+<li>Compare them with the week before.</li>
+<li>Note one thing that improved and why.</li>
+<li>Choose one thing to test next week.</li>
+</ol>
+<p>Small, steady improvements in conversion rate and cost per lead add up quickly.</p>""",
+"example": "<p>A tutoring business saw that Instagram brought the most visitors but almost no enquiries, while a few Google searches brought fewer visitors with a much higher conversion rate. Tracking these numbers each week helped them move budget and effort to the channel that actually filled classes.</p>",
+"checklist": "I know my five key numbers\nGoogle Analytics 4 is installed on my site\nI add UTM tags to links in emails, posts and ads\nI review the numbers once a week\nI pick one thing to test each week",
+"assignment": "<p>Create a simple weekly report (a spreadsheet is fine) with the five numbers as columns. Fill in last week's numbers, or estimates if you are just starting.</p>",
+"video_script": "Hook: More visitors, fewer customers — the tutoring business that found the leak.\nThe five numbers.\nWhere to find each one.\nUTM tags.\nThe 15-minute weekly report.\nAssignment: build your report.",
+"quiz": [
+  {"q": "How do you calculate conversion rate?", "opts": ["Spend ÷ leads", "Leads ÷ visitors", "Revenue ÷ ad spend", "Customers ÷ visitors × spend"], "correct": 1, "exp": "Conversion rate = leads (or sales) ÷ visitors."},
+  {"q": "What do UTM parameters help you see?", "opts": ["Which link, post or ad brought a visitor", "How fast your site loads", "Your Google ranking", "Your email open rate"], "correct": 0, "exp": "UTMs label links so analytics can attribute visits and conversions to their source."},
+  {"q": "You spent $1,000 and got 50 leads. What is your cost per lead?", "opts": ["$5", "$20", "$50", "$1,000"], "correct": 1, "exp": "$1,000 ÷ 50 = $20 per lead."},
+]})
+
+for l in L:
+    course["modules"][l.pop("module")]["lessons"].append(l)
+
+out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "digital-marketing-for-beginners.json")
+json.dump(course, open(out, "w"), ensure_ascii=False, indent=2)
+print("lessons:", sum(len(m["lessons"]) for m in course["modules"]))
