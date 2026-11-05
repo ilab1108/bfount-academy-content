@@ -1,3 +1,16 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "slug": "how-to-become-a-media-buyer",
+      "title": "How to Become a Media Buyer With No Experience (90-Day Plan)",
+      "meta": "How to become a media buyer with no experience: what the job involves, the skills that matter, a 90-day plan, and how to build a portfolio that gets interviews.",
+      "excerpt": "No degree, no experience? Here is the 90-day plan to learn media buying, get real results and land your first role or client.",
+      "category": "growth",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "published_at": "2026-11-06T00:05:00+05:30",
+      "updated": "2026-11-06T00:05:00+05:30",
+      "body_file": "articles/how-to-become-a-media-buyer.html"
+    }
+  ]
 }
