@@ -12,5 +12,15 @@
       "updated": "2026-11-06T00:05:00+05:30",
       "body_file": "articles/how-to-become-a-media-buyer.html"
     }
+  ],
+  "courses": [
+    {
+      "slug": "digital-marketing-for-beginners",
+      "file": "courses/digital-marketing-for-beginners.json",
+      "updated": "2026-11-06T00:10:00+05:30",
+      "paths": [
+        "complete-marketer"
+      ]
+    }
   ]
 }

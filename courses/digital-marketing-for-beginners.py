@@ -23,6 +23,7 @@ course = {
   "modules": [
     {"title": "Module 1 · The digital marketing map", "lessons": []},
     {"title": "Module 2 · Channels that bring customers", "lessons": []},
+    {"title": "Module 3 · Your digital marketing plan", "lessons": []},
   ],
 }
 
@@ -251,9 +252,19 @@ L.append({"module": 1, "title": "Measuring results: five numbers every beginner 
   {"q": "You spent $1,000 and got 50 leads. What is your cost per lead?", "opts": ["$5", "$20", "$50", "$1,000"], "correct": 1, "exp": "$1,000 ÷ 50 = $20 per lead."},
 ]})
 
+# Final project lesson (kind "project", no quiz) — every course ends with one.
+L.append({"module": 2, "kind": "project", "title": "Final project: your one-page digital marketing plan", "slug": "digital-marketing-plan-project", "minutes": 45, "free_preview": False,
+"intro": "Bring everything together in a one-page digital marketing plan for a real or imaginary small business. It is practical proof of your skills for clients, employers or your own business.",
+"body": "<h2>What to include</h2><ol><li><strong>Customer and offer:</strong> who you serve, the problem you solve and why someone should choose you.</li><li><strong>Funnel:</strong> one line each for attract, capture, convert and retain.</li><li><strong>Two starting channels:</strong> which two channels you will start with and why they fit this business.</li><li><strong>One month of content:</strong> your content pillars and 8–12 post ideas.</li><li><strong>Welcome email:</strong> the lead magnet and the three welcome emails (subject line + summary).</li><li><strong>Paid ads test:</strong> platform, offer, landing page, daily budget, test length and your maximum cost per lead.</li><li><strong>Measurement:</strong> the five numbers you will track each week and how you will tag your links.</li></ol><h2>How it is reviewed</h2><p>A good plan is specific (real numbers, real channels, real offers), consistent (each part supports the funnel) and realistic for the budget and time available.</p>",
+"example": "<p>A home bakery plan: customers are local families ordering birthday cakes. Attract with Instagram reels and Google Business Profile; capture with a \"free cake-size guide\" sign-up; convert with a three-email sequence ending in a first-order offer; run a small Meta Ads test to a local audience; track visitors, sign-ups, cost per lead, orders and revenue each week.</p>",
+"checklist": "My customer and offer are specific\nEach funnel stage has a clear action\nI explained why I chose my two channels\nI planned a month of content\nMy welcome sequence and lead magnet are written\nMy ads test has a budget and a maximum cost per lead\nI listed the five numbers I will track",
+"assignment": "<p>Submit your one-page plan (document, PDF or link). Keep it to one or two pages — clarity beats length.</p>",
+"video_script": "Hook: One page that proves you can do digital marketing.\nWhat to include, section by section.\nExample: the home bakery plan.\nHow it is reviewed.\nSubmit your plan.",
+"quiz": []})
+
 for l in L:
     course["modules"][l.pop("module")]["lessons"].append(l)
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "digital-marketing-for-beginners.json")
 json.dump(course, open(out, "w"), ensure_ascii=False, indent=2)
-print("lessons:", sum(len(m["lessons"]) for m in course["modules"]))
+print("lessons:", sum(len(m["lessons"]) for m in course["modules"]), "quiz questions:", sum(len(l["quiz"]) for m in course["modules"] for l in m["lessons"]))

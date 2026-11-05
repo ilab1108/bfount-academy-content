@@ -17,3 +17,10 @@ Categories: start, search, social, offline, seo, leadgen, callcenter, tracking, 
 Extra files per article (LinkedIn post, backlink notes) live in `social/` and `notes/` and are not published.
 
 Leave out `published_at` so the article goes live the moment it is imported. (The server clock runs on US Eastern time; a timestamp in the future keeps the article hidden until then.)
+
+## Courses
+`feed.json` also has a `courses` list: `{"slug", "file": "courses/<slug>.json", "updated", "paths": ["complete-marketer", …]}`.
+The site imports a new course (course, modules, lessons, quizzes) with its own `ac_import_course()` and adds it to the listed existing learning paths.
+Courses made in the admin are never touched; courses this importer created are refreshed when `updated` changes.
+`courses/<slug>.py` is the readable source — run it to build `courses/<slug>.json`. Use `courses/digital-marketing-for-beginners.py` as the template.
+Learning path slugs: complete-marketer, performance-marketer, b2b-growth, ai-marketer, call-center-operator, content-brand-builder, paid-ads-specialist, inbound-lead-generation, publisher-affiliate.
