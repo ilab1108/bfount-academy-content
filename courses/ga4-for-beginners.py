@@ -1,0 +1,265 @@
+# Builds courses/ga4-for-beginners.json (template: courses/digital-marketing-for-beginners.py).
+import json, os
+
+course = {
+  "title": "GA4 for Beginners",
+  "slug": "ga4-for-beginners",
+  "category_id": 8,
+  "level": "beginner",
+  "icon": "📈",
+  "sort_order": 300,
+  "summary": "Set up Google Analytics 4 the right way and read it with confidence: installation, events and key events, traffic sources, UTM tracking and the reports that show whether your marketing works.",
+  "outcomes": "\n".join([
+    "Explain how GA4 measures users, sessions and events",
+    "Install GA4 on a website and confirm data is arriving",
+    "Mark the actions that matter as key events",
+    "Read traffic acquisition reports to see which channels bring results",
+    "Tag campaign links with UTM parameters so every source is tracked",
+    "Build a simple weekly report from GA4 data",
+  ]),
+  "description": "<p>Google Analytics 4 (GA4) is the free tool most websites use to understand their visitors — but its interface confuses many beginners. This course cuts through it. You will learn how GA4 thinks about data, set it up correctly, track the actions that matter to your business, and read the handful of reports that answer real marketing questions.</p><p>Each lesson is short and practical, with a worked example, a checklist and an assignment you can do on your own site (or GA4's free demo account).</p>",
+  "project": "Set up (or audit) GA4 for a real website: confirm installation, choose and mark 2–4 key events, tag one campaign with UTM parameters, and write a one-page weekly report showing users, sessions by channel, key events by channel and one insight with a next step.",
+  "status": "published",
+  "modules": [
+    {"title": "Module 1 · Setting up GA4 correctly", "lessons": []},
+    {"title": "Module 2 · Reading GA4 and acting on it", "lessons": []},
+    {"title": "Module 3 · Your GA4 setup and report", "lessons": []},
+  ],
+}
+
+L = []
+
+L.append({"module": 0, "title": "How GA4 thinks: users, sessions and events", "slug": "how-ga4-works", "minutes": 10, "free_preview": True,
+"intro": "GA4 is built around one idea: everything a visitor does is an event. Once you understand users, sessions and events, every report in GA4 starts to make sense.",
+"body": """<h2>The three building blocks</h2>
+<table>
+<thead><tr><th>Term</th><th>What it means</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>User</td><td>A person (or more precisely a browser or device) visiting your site</td><td>Priya on her phone</td></tr>
+<tr><td>Session</td><td>A group of interactions in one visit</td><td>Priya's visit on Monday evening</td></tr>
+<tr><td>Event</td><td>A single action</td><td>Viewing a page, scrolling, clicking a link, submitting a form</td></tr>
+</tbody>
+</table>
+<h2>Everything is an event</h2>
+<p>Older analytics tools treated page views as the main unit. In GA4, a page view is just one type of event (<code>page_view</code>). A purchase, a sign-up and a video play are events too. This makes GA4 flexible: you can measure almost any action the same way.</p>
+<h2>Four kinds of events</h2>
+<ol>
+<li><strong>Automatically collected:</strong> GA4 records these with no setup, such as <code>page_view</code>, <code>session_start</code> and <code>first_visit</code>.</li>
+<li><strong>Enhanced measurement:</strong> switch-on extras such as scrolls, outbound clicks, site search, video engagement and file downloads.</li>
+<li><strong>Recommended events:</strong> names Google suggests for common actions, such as <code>sign_up</code>, <code>generate_lead</code> and <code>purchase</code>.</li>
+<li><strong>Custom events:</strong> your own names for anything else.</li>
+</ol>
+<h2>Key events: the actions that matter</h2>
+<p>Most events are just activity. A few show real business results — a lead, a sign-up, a purchase, a booked call. In GA4 you mark those as <strong>key events</strong> so reports highlight them. (Older guides call these "conversions".)</p>
+<h2>Engagement, not bounce</h2>
+<p>GA4 counts a session as <strong>engaged</strong> if the visitor stayed a meaningful time, viewed more than one page, or triggered a key event. <strong>Engagement rate</strong> is the share of sessions that were engaged — a more useful number than old-style bounce rate.</p>""",
+"example": "<p>An online course site wondered why its traffic reports looked healthy but sign-ups were flat. Once they understood that a sign-up was just another event — and marked <code>sign_up</code> as a key event — they could see which traffic sources produced sign-ups, not just visits.</p>",
+"checklist": "I can explain users, sessions and events\nI know that a page view is just one kind of event\nI know the four kinds of events in GA4\nI know what a key event is\nI understand engagement rate",
+"assignment": "<p>List the 2–4 actions on your website that show real business results (for example sign-up, lead form, purchase, call click). These will become your key events.</p>",
+"video_script": "Hook: Healthy traffic, flat sign-ups — what the reports weren't showing.\nUsers, sessions, events.\nEverything is an event.\nFour kinds of events.\nKey events.\nEngagement rate.\nAssignment: list your key actions.",
+"quiz": [
+  {"q": "In GA4, a page view is…", "opts": ["The only thing GA4 measures", "One type of event", "A type of user", "A paid feature"], "correct": 1, "exp": "GA4 records page views as the page_view event, alongside every other action."},
+  {"q": "What is a key event?", "opts": ["Any event with a long name", "An event you mark because it shows a real business result", "The first page someone visits", "An event Google charges for"], "correct": 1, "exp": "Key events are the actions that matter most, such as sign-ups, leads or purchases."},
+  {"q": "Which of these is an enhanced measurement event?", "opts": ["purchase", "Scroll", "generate_lead", "A custom event you named yourself"], "correct": 1, "exp": "Enhanced measurement can record scrolls, outbound clicks, site search, video engagement and file downloads."},
+]})
+
+L.append({"module": 0, "title": "Installing GA4 and checking it works", "slug": "install-ga4", "minutes": 12, "free_preview": False,
+"intro": "A clean installation is the foundation of trustworthy data. This lesson walks through creating a GA4 property, adding the tag to your site and confirming that data is arriving.",
+"body": """<h2>Step 1: Create an account and property</h2>
+<ol>
+<li>Go to Google Analytics and sign in with a Google account the business controls (not a personal one that may leave).</li>
+<li>Create an <strong>account</strong> (usually your company) and a <strong>property</strong> (usually your website).</li>
+<li>Set the correct <strong>time zone</strong> and <strong>currency</strong> — reports and revenue depend on them.</li>
+<li>Add a <strong>web data stream</strong> for your website's URL. GA4 gives you a <strong>Measurement ID</strong> that starts with <code>G-</code>.</li>
+</ol>
+<h2>Step 2: Add the tag to your site</h2>
+<table>
+<thead><tr><th>Method</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Website builder or CMS setting (paste the G- ID)</td><td>Shopify, Wix, Squarespace, many WordPress plugins</td></tr>
+<tr><td>Google tag pasted into every page's &lt;head&gt;</td><td>Simple custom websites</td></tr>
+<tr><td>Google Tag Manager</td><td>Sites where you will add more tags and events later</td></tr>
+</tbody>
+</table>
+<p>Use <strong>one</strong> method only. Installing GA4 twice is a common mistake that double-counts every page view.</p>
+<h2>Step 3: Check data is arriving</h2>
+<ul>
+<li>Open your site in another tab, then look at GA4's <strong>Realtime</strong> report — you should see yourself within a minute or two.</li>
+<li>Use <strong>DebugView</strong> (with Tag Assistant) to watch individual events as they fire.</li>
+</ul>
+<h2>Step 4: Important settings</h2>
+<ul>
+<li><strong>Enhanced measurement:</strong> leave it on unless an option causes problems.</li>
+<li><strong>Data retention:</strong> GA4 defaults to 2 months for detailed exploration data; standard properties can extend this to 14 months in Admin → Data settings. Do it on day one.</li>
+<li><strong>Internal traffic:</strong> define your office IP addresses as internal traffic and filter them out so your own visits don't inflate reports.</li>
+<li><strong>Consent:</strong> if you have visitors in regions that require cookie consent, make sure your consent banner and tags respect visitors' choices.</li>
+</ul>""",
+"example": "<p>A small agency noticed its client's page views had doubled overnight with no change in sales. The developer had added the Google tag directly to the site while a plugin was already sending data to the same property. Removing one of them fixed the reports — and the Realtime check now became part of every launch.</p>",
+"checklist": "The property uses a business-owned Google account\nTime zone and currency are correct\nGA4 is installed once, using one method\nI saw my own visit in the Realtime report\nData retention is extended\nInternal traffic is filtered",
+"assignment": "<p>Install GA4 on your site (or open Google's free GA4 demo account). Confirm a visit in Realtime and take a screenshot of the data retention setting.</p>",
+"video_script": "Hook: Page views doubled overnight — and sales didn't move.\nAccount, property, data stream, G- ID.\nThree ways to install — pick one.\nCheck in Realtime and DebugView.\nSettings to change on day one.\nAssignment: install and verify.",
+"quiz": [
+  {"q": "What does the GA4 Measurement ID start with?", "opts": ["UA-", "G-", "GTM-", "AW-"], "correct": 1, "exp": "GA4 web data streams use a Measurement ID beginning with G-."},
+  {"q": "What happens if GA4 is installed twice on the same pages?", "opts": ["Nothing", "Page views and other events can be double-counted", "GA4 refuses to collect data", "Data is deleted"], "correct": 1, "exp": "Two installations send the same events twice, inflating your numbers."},
+  {"q": "Which report lets you quickly confirm that data is arriving?", "opts": ["Realtime", "Demographics", "Retention", "Monetisation overview"], "correct": 0, "exp": "The Realtime report shows activity from the last few minutes, including your own test visit."},
+]})
+
+L.append({"module": 0, "title": "Tracking what matters: events and key events", "slug": "ga4-key-events", "minutes": 12, "free_preview": False,
+"intro": "Traffic is only useful if you can see which visits turn into results. Learn how to track sign-ups, leads and purchases as events and mark them as key events.",
+"body": """<h2>Start with your business goals</h2>
+<p>Before touching settings, write down the 2–4 actions that matter most. For most sites these are:</p>
+<ul>
+<li>Lead form submitted (<code>generate_lead</code>)</li>
+<li>Account created or newsletter sign-up (<code>sign_up</code>)</li>
+<li>Purchase completed (<code>purchase</code>)</li>
+<li>Phone number or WhatsApp button clicked (a custom event such as <code>click_to_call</code>)</li>
+</ul>
+<h2>Three ways to get the event into GA4</h2>
+<ol>
+<li><strong>Already collected:</strong> some platforms (for example many e-commerce plugins) send <code>purchase</code> automatically. Check in DebugView.</li>
+<li><strong>Create from an existing event:</strong> in Admin → Events → Create event, you can build a new event from a page view — for example <code>generate_lead</code> whenever someone views the <code>/thank-you/</code> page.</li>
+<li><strong>Send it from your site or Google Tag Manager:</strong> best for clicks and form submissions that don't lead to a separate page.</li>
+</ol>
+<h2>Mark it as a key event</h2>
+<p>Once the event appears in GA4, open Admin → Events (or Key events) and mark it as a key event. From then on it appears in key event columns across your reports. Marking is not retroactive, so do it early.</p>
+<h2>Give events a value</h2>
+<p>If a lead is worth roughly $40 to your business, send a <code>value</code> and <code>currency</code> with the event. GA4 can then show which channels produce the most value, not just the most events.</p>
+<h2>Keep it clean</h2>
+<ul>
+<li>Use Google's recommended event names where they fit.</li>
+<li>Use lowercase names with underscores.</li>
+<li>Don't mark everything as a key event — if everything is important, nothing is.</li>
+</ul>""",
+"example": "<p>A dental clinic's booking form showed a thank-you page at <code>/booking-confirmed/</code>. They created a <code>generate_lead</code> event from page views of that URL and marked it as a key event. Within a week they could see that Google Business Profile visitors booked far more often than social media visitors.</p>",
+"checklist": "I listed my 2–4 most important actions\nEach one is tracked as an event in GA4\nEach is marked as a key event\nHigh-value events include a value and currency\nEvent names are clean and consistent",
+"assignment": "<p>Create or confirm one key event on your site (for example a thank-you page view turned into <code>generate_lead</code>). Test it in DebugView and mark it as a key event.</p>",
+"video_script": "Hook: The clinic that found its best patients came from Google Maps.\nStart with business goals.\nThree ways to create events.\nMark key events early.\nAdd value and currency.\nNaming rules.\nAssignment: create one key event.",
+"quiz": [
+  {"q": "A thank-you page loads after every lead form. What is a simple way to track leads?", "opts": ["Count homepage views", "Create a generate_lead event from views of the thank-you page", "Turn off enhanced measurement", "Count total users"], "correct": 1, "exp": "A thank-you page view is a reliable signal that the form was submitted."},
+  {"q": "Is marking an event as a key event retroactive?", "opts": ["Yes, it updates all past data", "No, it applies from the time you mark it", "Only for purchases", "Only in the Realtime report"], "correct": 1, "exp": "Mark key events early — past data is not reprocessed."},
+  {"q": "Why send a value with a key event?", "opts": ["It makes the event load faster", "So GA4 can show which channels produce the most value", "Google requires it for all events", "It hides the event from reports"], "correct": 1, "exp": "Values let you compare channels by business value, not just counts."},
+]})
+
+L.append({"module": 1, "title": "Where visitors come from: traffic acquisition", "slug": "ga4-traffic-acquisition", "minutes": 11, "free_preview": False,
+"intro": "The traffic acquisition report answers the most common marketing question: which channels bring visitors who take action? Learn how to read it and avoid common misreadings.",
+"body": """<h2>Find the report</h2>
+<p>Go to <strong>Reports → Acquisition → Traffic acquisition</strong>. Each row is a channel; the columns show sessions, engaged sessions, engagement rate, key events and revenue.</p>
+<h2>The default channel groups</h2>
+<table>
+<thead><tr><th>Channel</th><th>What it usually means</th></tr></thead>
+<tbody>
+<tr><td>Organic Search</td><td>Unpaid results from Google, Bing and other search engines</td></tr>
+<tr><td>Paid Search</td><td>Search ads</td></tr>
+<tr><td>Organic Social / Paid Social</td><td>Unpaid posts / paid ads on social networks</td></tr>
+<tr><td>Email</td><td>Links in emails (needs UTM tags to be reliable)</td></tr>
+<tr><td>Referral</td><td>Links from other websites</td></tr>
+<tr><td>Direct</td><td>Typed URLs, bookmarks — and visits GA4 couldn't attribute</td></tr>
+</tbody>
+</table>
+<h2>Read it like a marketer</h2>
+<ol>
+<li>Sort by <strong>key events</strong>, not just sessions — the biggest channel isn't always the best.</li>
+<li>Compare <strong>engagement rate</strong> between channels to spot low-quality traffic.</li>
+<li>Calculate a simple <strong>key event rate</strong> per channel: key events ÷ sessions.</li>
+<li>Use the date picker to compare with the previous period.</li>
+</ol>
+<h2>Session vs first-user source</h2>
+<p><strong>Traffic acquisition</strong> credits the source of each session. <strong>User acquisition</strong> credits the source that first brought each user. Use user acquisition to see what attracts new people; use traffic acquisition to see what brings visits that convert.</p>
+<h2>Beware large "Direct" numbers</h2>
+<p>A big Direct channel often hides untagged emails, messaging apps and links in PDFs. The fix is UTM tagging — the next lesson.</p>""",
+"example": "<p>A software company's biggest channel by sessions was Organic Social, so they planned to post more. Sorting by key events showed Organic Search produced several times more demo requests from fewer sessions. They shifted effort into a few in-depth search articles instead.</p>",
+"checklist": "I can find the traffic acquisition report\nI know what each default channel means\nI sort channels by key events, not just sessions\nI compare engagement and key event rates between channels\nI know the difference between traffic and user acquisition",
+"assignment": "<p>Open traffic acquisition for the last 28 days. Write down the top three channels by sessions and the top three by key events. What is different, and what would you do about it?</p>",
+"video_script": "Hook: The biggest channel wasn't the best channel.\nWhere to find traffic acquisition.\nDefault channel groups.\nRead it like a marketer: key events, engagement, rates.\nSession vs first-user source.\nThe 'Direct' trap.\nAssignment: compare top channels.",
+"quiz": [
+  {"q": "Which column should you sort by to find the channels that bring results?", "opts": ["Sessions", "Key events", "Average engagement time only", "Users"], "correct": 1, "exp": "Key events show which channels produce real outcomes, not just visits."},
+  {"q": "Which report credits the source that FIRST brought a user to your site?", "opts": ["Traffic acquisition", "User acquisition", "Pages and screens", "Realtime"], "correct": 1, "exp": "User acquisition uses the first-user source; traffic acquisition uses each session's source."},
+  {"q": "A very large Direct channel often means…", "opts": ["Your brand is famous", "Some sources, such as emails or messaging apps, aren't tagged", "GA4 is broken", "You should stop all ads"], "correct": 1, "exp": "Untagged links frequently end up in Direct. UTM tags fix this."},
+]})
+
+L.append({"module": 1, "title": "UTM parameters: tracking every campaign link", "slug": "ga4-utm-tracking", "minutes": 10, "free_preview": False,
+"intro": "UTM parameters are short tags added to links so GA4 knows exactly which email, post or ad sent each visitor. Learn the five parameters, a naming system and the mistakes to avoid.",
+"body": """<h2>What a tagged link looks like</h2>
+<p><code>https://example.com/offer/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=spring-sale</code></p>
+<h2>The five UTM parameters</h2>
+<table>
+<thead><tr><th>Parameter</th><th>Answers</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>utm_source</td><td>Who sent the visitor?</td><td>newsletter, facebook, linkedin</td></tr>
+<tr><td>utm_medium</td><td>What type of channel?</td><td>email, social, cpc, referral</td></tr>
+<tr><td>utm_campaign</td><td>Which campaign?</td><td>spring-sale, webinar-oct</td></tr>
+<tr><td>utm_content</td><td>Which version or link? (optional)</td><td>video-ad, footer-link</td></tr>
+<tr><td>utm_term</td><td>Which keyword? (optional, mostly paid search)</td><td>crm-software</td></tr>
+</tbody>
+</table>
+<h2>Use medium values GA4 understands</h2>
+<p>GA4 sorts traffic into channels partly from <code>utm_medium</code>. Use standard values such as <code>email</code>, <code>social</code>, <code>cpc</code>, <code>paid_social</code>, <code>referral</code> and <code>affiliate</code>. Made-up values like <code>insta-story</code> can end up in "Unassigned".</p>
+<h2>A simple naming system</h2>
+<ul>
+<li>Always lowercase (GA4 treats <code>Email</code> and <code>email</code> as different).</li>
+<li>Use hyphens instead of spaces.</li>
+<li>Keep a shared spreadsheet of every tagged link and its parameters.</li>
+<li>Use a URL builder so links are typed the same way every time.</li>
+</ul>
+<h2>When not to use UTMs</h2>
+<p>Never add UTM tags to links <strong>within your own website</strong> — they restart the session and overwrite the real source. Google Ads usually doesn't need them either when auto-tagging is on.</p>""",
+"example": "<p>A fitness brand sent the same offer by email, WhatsApp and an Instagram bio link. Before tagging, most of it showed as Direct. With UTMs (<code>utm_source=whatsapp&amp;utm_medium=social&amp;utm_campaign=jan-challenge</code> and so on), they found WhatsApp brought fewer visitors but the highest sign-up rate — and gave it a bigger role in the next launch.</p>",
+"checklist": "I know the five UTM parameters\nI use standard medium values\nAll my UTM values are lowercase with hyphens\nI keep a spreadsheet of tagged links\nI never tag internal links on my own site",
+"assignment": "<p>Create tagged links for your next email, one social post and one partner link. Record them in a simple spreadsheet with columns for URL, source, medium, campaign and content.</p>",
+"video_script": "Hook: Same offer, three channels — and the smallest one won.\nAnatomy of a tagged link.\nThe five parameters.\nMedium values GA4 understands.\nNaming system.\nWhen not to tag.\nAssignment: tag three links.",
+"quiz": [
+  {"q": "Which UTM parameter describes the type of channel, such as email or cpc?", "opts": ["utm_source", "utm_medium", "utm_campaign", "utm_content"], "correct": 1, "exp": "utm_medium is the channel type; GA4 uses it to group traffic into channels."},
+  {"q": "Why keep UTM values lowercase?", "opts": ["GA4 treats different capitalisation as different values", "Uppercase links don't work", "Google charges for uppercase", "It makes pages load faster"], "correct": 0, "exp": "Email and email would appear as two separate sources."},
+  {"q": "Where should you NOT use UTM parameters?", "opts": ["Email newsletters", "Social posts", "Links between pages on your own website", "Partner websites"], "correct": 2, "exp": "Tagging internal links starts a new session and overwrites the visitor's real source."},
+]})
+
+L.append({"module": 1, "title": "Your weekly GA4 report", "slug": "ga4-weekly-report", "minutes": 11, "free_preview": False,
+"intro": "GA4 has dozens of reports, but you only need a few to run your marketing. Build a 15-minute weekly routine that turns data into one clear decision.",
+"body": """<h2>The five reports to check each week</h2>
+<table>
+<thead><tr><th>Report</th><th>Where</th><th>Question it answers</th></tr></thead>
+<tbody>
+<tr><td>Reports snapshot</td><td>Reports → Reports snapshot</td><td>Are users and key events up or down?</td></tr>
+<tr><td>Traffic acquisition</td><td>Acquisition → Traffic acquisition</td><td>Which channels bring results?</td></tr>
+<tr><td>Pages and screens</td><td>Engagement → Pages and screens</td><td>Which pages get attention?</td></tr>
+<tr><td>Landing page</td><td>Engagement → Landing page</td><td>Which entry pages convert?</td></tr>
+<tr><td>Key events</td><td>Engagement → Key events</td><td>How many results, and of which kind?</td></tr>
+</tbody>
+</table>
+<h2>The 15-minute routine</h2>
+<ol>
+<li>Set the date range to <strong>last 7 days</strong> and compare with the <strong>previous period</strong>.</li>
+<li>Note users, sessions, key events and key event rate.</li>
+<li>Check which channel moved the most, up or down.</li>
+<li>Find the landing page with the most sessions but a low key event rate — your biggest opportunity.</li>
+<li>Write <strong>one insight</strong> and <strong>one action</strong> for next week.</li>
+</ol>
+<h2>Explorations for deeper questions</h2>
+<p>When a standard report isn't enough, <strong>Explore</strong> lets you build custom tables and funnels. A <strong>funnel exploration</strong> (for example: landing page → sign-up page → sign-up complete) shows exactly where visitors drop out.</p>
+<h2>Share it simply</h2>
+<p>For a manager or client, a short summary beats a screenshot dump: three numbers, one chart, one insight, one next step. Looker Studio can turn GA4 data into a shareable dashboard when you're ready.</p>""",
+"example": "<p>A course creator's weekly routine showed one blog post bringing a third of all landing-page sessions but almost no sign-ups. Adding a clear free-lesson offer halfway down the post turned it into the site's top sign-up source within a month.</p>",
+"checklist": "I know the five reports to check weekly\nI compare each week with the previous period\nI look for high-traffic, low-conversion landing pages\nI write one insight and one action every week\nI know when to use an exploration",
+"assignment": "<p>Do the 15-minute routine for last week and write your one insight and one action. Use your own site or Google's GA4 demo account.</p>",
+"video_script": "Hook: The blog post with a third of the traffic and none of the sign-ups.\nFive weekly reports.\nThe 15-minute routine.\nFunnel explorations.\nShare it simply.\nAssignment: your first weekly report.",
+"quiz": [
+  {"q": "Which report shows which entry pages lead to key events?", "opts": ["Landing page", "Realtime", "Tech details", "Demographic details"], "correct": 0, "exp": "The Landing page report shows performance by the first page of each session."},
+  {"q": "What is the biggest quick-win opportunity in a weekly review?", "opts": ["A page with low traffic and high conversions", "A page with high traffic and a low key event rate", "The homepage logo", "Pages with no traffic"], "correct": 1, "exp": "Improving a high-traffic page that rarely converts has the biggest impact."},
+  {"q": "Which GA4 tool shows where visitors drop out of a sequence of steps?", "opts": ["Funnel exploration", "Realtime", "Data retention", "Internal traffic filter"], "correct": 0, "exp": "A funnel exploration shows how many people complete each step and where they leave."},
+]})
+
+L.append({"module": 2, "kind": "project", "title": "Final project: set up GA4 and write your first report", "slug": "ga4-setup-and-report-project", "minutes": 45, "free_preview": False,
+"intro": "Put everything into practice: set up or audit GA4 for a real website, track the actions that matter and write a one-page weekly report you could show a manager or client.",
+"body": "<h2>What to deliver</h2><ol><li><strong>Setup check:</strong> property settings (time zone, currency), single installation confirmed in Realtime, data retention extended, internal traffic filtered.</li><li><strong>Key events:</strong> 2–4 key events, how each is tracked, and a test screenshot from DebugView.</li><li><strong>UTM plan:</strong> tagged links for one campaign across at least two channels, recorded in a spreadsheet.</li><li><strong>Weekly report:</strong> users, sessions by channel, key events by channel and key event rate — compared with the previous period.</li><li><strong>Insight and action:</strong> one finding and the change you would make next week.</li></ol><h2>How it is reviewed</h2><p>A strong project is accurate (settings and events really work), focused (only the events that matter) and actionable (the report ends with a clear next step).</p>",
+"example": "<p>A local café audit: one installation confirmed, key events for <code>click_to_call</code> and table-booking form submissions, UTM-tagged links for an Instagram offer and a WhatsApp broadcast, and a weekly report showing Google Business Profile visitors booked most often — so the next action was adding fresh photos and posts to the profile.</p>",
+"checklist": "Setup settings are checked and fixed\nGA4 is installed once and verified\n2–4 key events are tracked and tested\nOne campaign is UTM-tagged across two channels\nMy report compares with the previous period\nMy report ends with one insight and one action",
+"assignment": "<p>Submit your setup checklist, key event list, UTM spreadsheet and one-page weekly report (document, PDF or link).</p>",
+"video_script": "Hook: A one-page report that proves you can use GA4.\nWhat to deliver, step by step.\nExample: the café audit.\nHow it is reviewed.\nSubmit your project.",
+"quiz": []})
+
+for l in L:
+    course["modules"][l.pop("module")]["lessons"].append(l)
+
+out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ga4-for-beginners.json")
+json.dump(course, open(out, "w"), ensure_ascii=False, indent=2)
+print("lessons:", sum(len(m["lessons"]) for m in course["modules"]), "quiz questions:", sum(len(l["quiz"]) for m in course["modules"] for l in m["lessons"]))

@@ -21,6 +21,15 @@
       "paths": [
         "complete-marketer"
       ]
+    },
+    {
+      "slug": "ga4-for-beginners",
+      "file": "courses/ga4-for-beginners.json",
+      "updated": "2026-11-06T00:26:42+05:30",
+      "paths": [
+        "complete-marketer",
+        "performance-marketer"
+      ]
     }
   ]
 }
