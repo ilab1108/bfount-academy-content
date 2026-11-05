@@ -24,3 +24,8 @@ The site imports a new course (course, modules, lessons, quizzes) with its own `
 Courses made in the admin are never touched; courses this importer created are refreshed when `updated` changes.
 `courses/<slug>.py` is the readable source — run it to build `courses/<slug>.json`. Use `courses/digital-marketing-for-beginners.py` as the template.
 Learning path slugs: complete-marketer, performance-marketer, b2b-growth, ai-marketer, call-center-operator, content-brand-builder, paid-ads-specialist, inbound-lead-generation, publisher-affiliate.
+
+## Refreshing an existing article
+To update an article that was originally made in the admin panel, add `"replace": true` to its feed entry (same slug) and
+change `updated`. The site keeps a backup of the old version in storage/cache/github_import_backup/ and keeps the original author.
+Keep titles at 60 characters or fewer.
