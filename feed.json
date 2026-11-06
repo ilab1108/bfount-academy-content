@@ -21,6 +21,28 @@
       "status": "published",
       "updated": "2026-11-06T02:25:27+05:30",
       "body_file": "articles/how-to-become-a-media-buyer.html"
+    },
+    {
+      "slug": "google-business-profile-optimization-checklist",
+      "title": "Google Business Profile Optimization Checklist (2026)",
+      "meta": "A 32-point Google Business Profile optimization checklist: categories, services, photos, reviews, posts and a 30-minute monthly routine for more local calls.",
+      "excerpt": "Get found on Google Maps: the 32 tasks that improve relevance and prominence, review templates, and a 30-minute monthly routine.",
+      "category": "seo",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-06T13:20:00+05:30",
+      "body_file": "articles/google-business-profile-optimization-checklist.html"
+    },
+    {
+      "slug": "google-ads-for-beginners",
+      "title": "Google Ads for Beginners: Launch Your First Campaign",
+      "meta": "Google Ads for beginners: set up tracking, pick high-intent keywords, write ads, set a budget from your max cost per lead and avoid mistakes that waste spend.",
+      "excerpt": "The 8 steps to a first Google Ads campaign that can pay for itself, with a worked $1,000 first month and a pre-launch checklist.",
+      "category": "search",
+      "status": "published",
+      "updated": "2026-11-06T13:20:00+05:30",
+      "body_file": "articles/google-ads-for-beginners.html",
+      "replace": true
     }
   ],
   "courses": [
