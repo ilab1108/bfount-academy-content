@@ -1,0 +1,129 @@
+<p><strong>Short answer:</strong> call tracking connects every phone call to the campaign, ad, keyword or page that produced it. It works by giving each traffic source its own tracking number — or swapping numbers on your website with dynamic number insertion (DNI) — then forwarding the call to the real destination while logging the source, duration, recording and outcome. In pay per call, call tracking is also how you decide which calls are <em>billable</em> and how you tell Google Ads, Microsoft Ads and Meta which calls actually made money.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#why">Why calls need their own tracking</a></li>
+<li><a href="#blocks">The building blocks</a></li>
+<li><a href="#static-vs-dni">Static numbers vs dynamic number insertion</a></li>
+<li><a href="#billable">Buffers and billable calls</a></li>
+<li><a href="#postback">Send conversions back to the ad platforms</a></li>
+<li><a href="#setup">Setup checklist (step by step)</a></li>
+<li><a href="#daily">What to look at every day</a></li>
+<li><a href="#platform">Choosing a platform</a></li>
+<li><a href="#privacy">Privacy and recording notices</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="why">Why calls need their own tracking</h2>
+<p>Online, every click leaves a trail: a referrer, UTM parameters, a click ID. Phone calls do not. When someone sees your ad, then dials the number on your page, the website analytics tool usually sees a page view — and nothing else. The call, the conversation and the sale happen somewhere your ad platform cannot see.</p>
+<p>Without call tracking, three things go wrong:</p>
+<ul>
+<li><strong>You under-count results.</strong> Campaigns that drive calls look like they produce nothing and get paused.</li>
+<li><strong>You optimise for the wrong thing.</strong> Bidding algorithms chase clicks or form fills rather than the calls that turn into revenue.</li>
+<li><strong>You cannot settle disputes.</strong> In pay per call, if a buyer says a call was not billable, you need a record of the duration, time and recording.</li>
+</ul>
+<p>That is why call tracking is the foundation of every profitable pay-per-call operation, and why any local business that relies on the phone should use it.</p>
+
+<h2 id="blocks">The building blocks</h2>
+<ul>
+<li><strong>Tracking numbers.</strong> Phone numbers you own on a call tracking platform. Each one forwards to the real destination (the buyer's queue, your call center or your office) while logging the call.</li>
+<li><strong>Static numbers per source.</strong> One number per channel or campaign — a TV station, a mailer, a Facebook campaign. Simple and reliable.</li>
+<li><strong>Dynamic number insertion (DNI).</strong> A script on your website swaps the number shown to each visitor based on where they came from. With a pool of numbers, you can attribute calls down to the keyword or ad.</li>
+<li><strong>Routing.</strong> Rules that send each call to the right buyer or team by time of day, state, caller ID, capacity or bid.</li>
+<li><strong>Recording and transcription.</strong> Evidence for disputes, quality checks and agent training.</li>
+<li><strong>Conversion postbacks.</strong> Sending the result of each call back to the ad platform or to the traffic source.</li>
+</ul>
+
+<h2 id="static-vs-dni">Static numbers vs dynamic number insertion</h2>
+<table>
+<thead><tr><th></th><th>Static tracking numbers</th><th>Dynamic number insertion (DNI)</th></tr></thead>
+<tbody>
+<tr><td>How it works</td><td>One fixed number per source</td><td>JavaScript swaps the number on your site per visitor or session</td></tr>
+<tr><td>Best for</td><td>Offline media (TV, radio, print, direct mail), call-only ads, a single landing page per campaign</td><td>Websites that receive traffic from many campaigns and keywords</td></tr>
+<tr><td>Attribution depth</td><td>Channel or campaign</td><td>Down to the visitor's session: source, campaign, keyword, click ID</td></tr>
+<tr><td>Numbers needed</td><td>One per source</td><td>A pool, sized to how many visitors are on the site at the same time</td></tr>
+<tr><td>Risks</td><td>Running out of distinct numbers as campaigns grow</td><td>A pool that is too small gives the same number to two visitors and blurs attribution; script errors show the wrong number</td></tr>
+</tbody>
+</table>
+<p>Most publishers use both: static numbers for offline and call-only ads, DNI for landing pages. When you use DNI, keep the default number in your page code as a fallback in case the script fails to load, and test on a phone after every change to your site.</p>
+<p>If your landing page is where calls start, it also has to be built to get the call — see <a href="/academy/landing-pages-that-make-the-phone-ring/">landing pages that make the phone ring</a>.</p>
+
+<h2 id="billable">Buffers and billable calls</h2>
+<p>Buyers rarely pay for every call. They pay when a call meets the <strong>buffer</strong> — a minimum duration such as 90 or 120 seconds — and other rules, like a duplicate window (the same caller ID within a set number of days is not paid twice), accepted states and buyer hours.</p>
+<p>Your tracking platform should mark each call as billable or not using the <em>same</em> rules as the buyer, so your numbers match theirs. If they do not match, find out why before the invoice is due: it is usually a different buffer start point (from connection vs from ring), a timezone mismatch on buyer hours, or calls that transferred and dropped.</p>
+<h3>A worked example</h3>
+<table>
+<thead><tr><th>Source</th><th>Calls</th><th>Billable (90s+)</th><th>Billable rate</th></tr></thead>
+<tbody>
+<tr><td>Google search</td><td>120</td><td>66</td><td>55%</td></tr>
+<tr><td>Facebook</td><td>90</td><td>27</td><td>30%</td></tr>
+<tr><td>Direct mail</td><td>40</td><td>26</td><td>65%</td></tr>
+</tbody>
+</table>
+<p>Facebook drives plenty of calls, but fewer than a third meet the buffer. Without per-source call tracking, you would only see the total — and keep funding the weakest source. To check what a source can afford per call, use your payout × billable rate; our guide to <a href="/academy/break-even-cpc-for-pay-per-call/">break-even CPC for pay per call</a> takes that one step further to a maximum bid.</p>
+
+<h2 id="postback">Send conversions back to the ad platforms</h2>
+<p>This step separates profitable publishers from the rest. If Google Ads only counts "a call happened", its bidding will chase cheap, short calls. Most call tracking platforms can send <strong>billable calls</strong> back to Google Ads, Microsoft Ads and Meta as offline conversions, with the payout as the value. The algorithm then optimises for the calls you are paid for.</p>
+<p>How it works in practice for Google Ads:</p>
+<ol>
+<li>Keep <strong>auto-tagging</strong> on, so each ad click carries a Google click ID (GCLID) to your landing page.</li>
+<li>Your DNI script captures the click ID with the visitor's session and attaches it to the call.</li>
+<li>When the call ends and is marked billable, the platform uploads a conversion with the click ID, the time and the value — either through a built-in integration or a scheduled import.</li>
+<li>In Google Ads, set up a separate conversion action for "billable call" and use it as the primary goal for bidding. Keep raw calls as a secondary action for reporting.</li>
+</ol>
+<p>Upload conversions often — Google recommends frequent (ideally daily) imports for accounts using automated bidding — and check the conversion action's diagnostics for unmatched uploads. Google is also moving conversion uploads to its newer Data Manager API, so if you built your own upload script rather than using your platform's integration, check Google's current documentation.</p>
+<p>The same idea applies to Meta through the Conversions API; see our <a href="/academy/meta-pixel-conversions-api-setup/">Meta Pixel and Conversions API setup guide</a>.</p>
+
+<h2 id="setup">Setup checklist (step by step)</h2>
+<ol>
+<li><strong>List every source</strong> that can produce a call: each ad platform, each offline channel, organic search, your Google Business Profile.</li>
+<li><strong>Decide static or DNI</strong> for each source using the table above.</li>
+<li><strong>Buy numbers</strong> in the right format: local numbers for local campaigns, toll-free for national ones.</li>
+<li><strong>Set routing</strong>: destination, hours, overflow and what happens after hours.</li>
+<li><strong>Add the recording notice</strong> to the call flow.</li>
+<li><strong>Configure billable rules</strong> to match each buyer's buffer, duplicate window and states.</li>
+<li><strong>Install DNI</strong> on landing pages; keep a fallback number in the HTML.</li>
+<li><strong>Connect ad platforms</strong> and test a postback with a real call.</li>
+<li><strong>Place test calls</strong> from each source and confirm the source, duration and billable flag are right.</li>
+<li><strong>Build a daily report</strong> (next section).</li>
+</ol>
+
+<h2 id="daily">What to look at every day</h2>
+<ul>
+<li>Calls by source and the billable rate for each.</li>
+<li>Average call duration and the share of very short calls (signs of misdials or poor targeting).</li>
+<li>Calls outside buyer hours (wasted spend — fix your ad schedule).</li>
+<li>Repeat callers (duplicates are usually not billable).</li>
+<li>Calls that reached no one: busy, no answer or dropped in transfer — money lost after you have paid for the click.</li>
+<li>A few recordings from each source.</li>
+</ul>
+
+<h2 id="platform">Choosing a platform</h2>
+<p>Popular call tracking and routing platforms used in pay per call include Ringba, TrackDrive, Retreaver, Invoca and CallRail — each with different strengths in routing, ping-post bidding, integrations and pricing. Pick one that supports:</p>
+<ul>
+<li>DNI with number pools and click ID capture</li>
+<li>Per-buyer buffers, duplicate windows and hours</li>
+<li>Recording and, ideally, transcription</li>
+<li>Conversion postbacks to Google Ads, Microsoft Ads and Meta</li>
+<li>The integrations and real-time bidding your buyers use (see <a href="/academy/rtb-pay-per-call-dynamic-payouts/">RTB pay per call and dynamic payouts</a>)</li>
+</ul>
+<p>Run a short trial with real traffic and real test calls before you commit.</p>
+
+<h2 id="privacy">Privacy and recording notices</h2>
+<p>Some US states and many countries require all parties to consent to call recording. A short notice at the start of the call ("this call may be recorded for quality") is standard practice. Store recordings securely and keep them as long as your contracts and regulations require — and no longer. If calls lead to outbound follow-up, consent rules also apply; see <a href="/academy/tcpa-consent-for-call-centers/">TCPA consent for call centers</a>. This is general information, not legal advice.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>What is call tracking in simple terms?</h3>
+<p>Giving each marketing source its own phone number (or swapping numbers on your website) so you know which source made each call, and whether that call turned into money.</p>
+<h3>Does call tracking hurt local SEO?</h3>
+<p>It can confuse listings if you change your main number everywhere. A common approach is to keep your main number as the primary number on your Google Business Profile and directories, and use a tracking number as an additional number — see <a href="/academy/local-seo-google-business-profile-calls/">local SEO and Google Business Profile for calls</a>.</p>
+<h3>How many numbers do I need for DNI?</h3>
+<p>Enough that each visitor on the site at the same time sees a different number. Your platform can size the pool from your traffic; if it reports numbers being reused, add more.</p>
+<h3>Is a long call always a billable call?</h3>
+<p>No. It must also meet the buyer's other rules — states, hours, duplicates, and sometimes a qualification such as age or coverage. Duration is the most common rule, not the only one.</p>
+<h3>What is the difference between call tracking and call recording?</h3>
+<p>Recording keeps the audio. Tracking ties the call to its source, duration and outcome. Most platforms do both.</p>
+
+<h2>Next step</h2>
+<p>BFOUNT provides tracking numbers or links when you are approved for a campaign, and shows your calls and billable rate in your portal. <a href="https://www.bfount.com/affiliate.php">Apply as a publisher</a>.</p>
+<p>To learn the whole model — traffic, tracking, buffers and payouts — take the <a href="/academy/courses/pay-per-call-performance-marketing/">Pay Per Call &amp; Performance Marketing course</a>, then work out what you can afford to pay for a call in the <a href="/academy/labs/max-cpl/">Max CPL lab</a>. For deeper attribution and conversion imports, see the <a href="/academy/courses/analytics-tracking-automation/">Analytics, Tracking &amp; Marketing Automation course</a>.</p>

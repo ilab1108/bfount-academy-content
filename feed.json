@@ -43,6 +43,29 @@
       "updated": "2026-11-06T13:20:00+05:30",
       "body_file": "articles/google-ads-for-beginners.html",
       "replace": true
+    },
+    {
+      "slug": "what-is-cost-per-lead",
+      "title": "What Is Cost Per Lead (CPL)? Formula & Max CPL",
+      "meta": "Learn what cost per lead (CPL) is, the CPL formula with worked examples, how to find your maximum CPL, and how to cut CPL without buying worse leads.",
+      "excerpt": "Cost per lead is total cost divided by leads. Here is how to calculate it, how to work out the maximum CPL you can afford, and how to lower it without hurting lead quality.",
+      "category": "tracking",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-12T00:10:00+05:30",
+      "body_file": "articles/what-is-cost-per-lead.html"
+    },
+    {
+      "slug": "call-tracking-101",
+      "title": "Call Tracking 101: Numbers, DNI & Billable Calls",
+      "meta": "Call tracking explained: tracking numbers, dynamic number insertion, billable-call buffers and sending call conversions to Google Ads. Setup checklist inside.",
+      "excerpt": "How call tracking ties every phone call to its source, when to use static numbers or DNI, how billable calls are decided, and how to feed them back to ad platforms.",
+      "category": "tracking",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-12T00:10:00+05:30",
+      "body_file": "articles/call-tracking-101.html",
+      "replace": true
     }
   ],
   "courses": [
