@@ -85,6 +85,15 @@
         "complete-marketer",
         "performance-marketer"
       ]
+    },
+    {
+      "slug": "social-media-marketing-for-beginners",
+      "file": "courses/social-media-marketing-for-beginners.json",
+      "updated": "2026-11-12T00:09:45+05:30",
+      "paths": [
+        "complete-marketer",
+        "content-brand-builder"
+      ]
     }
   ]
 }
