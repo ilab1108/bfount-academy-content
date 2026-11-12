@@ -1,0 +1,146 @@
+<p><strong>Short answer:</strong> UTM parameters are short tags you add to the end of a link, such as <code>?utm_source=facebook&amp;utm_medium=paid_social&amp;utm_campaign=spring_sale</code>, so Google Analytics 4 (GA4) can tell you exactly which campaign, platform and ad sent each visitor. Three tags do most of the work: <strong>utm_source</strong> (who sent the click), <strong>utm_medium</strong> (what kind of traffic it is) and <strong>utm_campaign</strong> (which campaign). Pick one naming convention, write everything in lowercase, never tag links inside your own website, and keep a shared sheet of every tagged link. This guide shows how to build UTM links, what values to use so GA4 files traffic in the right channel, and a naming template you can copy.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#what-are-utms">What UTM parameters are and why they matter</a></li>
+<li><a href="#the-parameters">The five core UTM parameters (and the newer GA4 ones)</a></li>
+<li><a href="#build">How to build a UTM link, step by step</a></li>
+<li><a href="#channels">Choosing utm_medium values so GA4 groups traffic correctly</a></li>
+<li><a href="#template">Free UTM naming template (copy this)</a></li>
+<li><a href="#where">Where to use UTMs — and where not to</a></li>
+<li><a href="#reports">Finding your UTM data in GA4</a></li>
+<li><a href="#calls">UTMs, phone calls and offline leads</a></li>
+<li><a href="#mistakes">Common UTM mistakes</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="what-are-utms">What UTM parameters are and why they matter</h2>
+<p>UTM stands for "Urchin Tracking Module", after Urchin, the analytics company Google bought and turned into Google Analytics. A UTM parameter is a key-value pair added after a question mark in a URL. The page loads exactly the same for the visitor; the extra text is simply read by your analytics tool and stored with the visit.</p>
+<p>Without UTMs, analytics tools guess where traffic came from using the referrer — the site the browser says the visitor came from. That guess often fails:</p>
+<ul>
+<li>Clicks from email apps, PDFs, SMS messages and many mobile apps usually arrive with no referrer and show up as <strong>Direct</strong>.</li>
+<li>Paid and organic posts on the same social network look identical, so your paid Instagram ads blend into your organic Instagram posts.</li>
+<li>Two campaigns sending people to the same landing page can't be told apart.</li>
+</ul>
+<p>UTMs fix this by telling GA4 the answer instead of letting it guess. That matters because every budget decision — which campaign to scale, which to pause, what your <a href="/academy/what-is-cost-per-lead/">cost per lead</a> or <a href="/academy/what-is-roas/">ROAS</a> really is — depends on knowing where your leads and sales came from.</p>
+
+<h2 id="the-parameters">The five core UTM parameters (and the newer GA4 ones)</h2>
+<table>
+<thead><tr><th>Parameter</th><th>What it answers</th><th>Example value</th><th>Required?</th></tr></thead>
+<tbody>
+<tr><td><code>utm_source</code></td><td>Who sent the traffic (site, platform, newsletter)</td><td><code>facebook</code>, <code>google</code>, <code>newsletter</code></td><td>Yes</td></tr>
+<tr><td><code>utm_medium</code></td><td>What type of traffic it is</td><td><code>paid_social</code>, <code>cpc</code>, <code>email</code></td><td>Yes</td></tr>
+<tr><td><code>utm_campaign</code></td><td>Which campaign or promotion</td><td><code>2026-11_black_friday</code></td><td>Yes</td></tr>
+<tr><td><code>utm_content</code></td><td>Which ad, creative or link within the campaign</td><td><code>video_testimonial_v2</code></td><td>Recommended</td></tr>
+<tr><td><code>utm_term</code></td><td>The paid keyword or audience</td><td><code>emergency_plumber</code></td><td>Optional</td></tr>
+</tbody>
+</table>
+<p>GA4 also reads a few newer parameters. <code>utm_id</code> carries a campaign ID, which is useful if you later import cost data into GA4 and need to match it to campaigns. <code>utm_source_platform</code>, <code>utm_creative_format</code> and <code>utm_marketing_tactic</code> also exist, but they are less widely used and not all of them show up in standard reports. If you are starting out, master the first four and add the rest only when you have a specific reporting need.</p>
+<blockquote><p><strong>Rule of thumb:</strong> source = <em>where</em>, medium = <em>how</em>, campaign = <em>why</em>, content = <em>which one</em>.</p></blockquote>
+
+<h2 id="build">How to build a UTM link, step by step</h2>
+<ol>
+<li><strong>Start with the final landing page URL.</strong> Use the exact page you want people to land on, including https. Example: <code>https://example.com/free-quote/</code>.</li>
+<li><strong>Add a question mark, then the first parameter.</strong> <code>https://example.com/free-quote/?utm_source=facebook</code>. If the URL already contains a <code>?</code>, use <code>&amp;</code> instead.</li>
+<li><strong>Join the other parameters with &amp;.</strong> <code>…?utm_source=facebook&amp;utm_medium=paid_social&amp;utm_campaign=2026-11_free_quote&amp;utm_content=carousel_before_after</code>.</li>
+<li><strong>Use only lowercase letters, numbers, underscores and hyphens.</strong> Spaces become <code>%20</code> or <code>+</code> and make reports messy.</li>
+<li><strong>Test the link.</strong> Open it in a private browser window, check the page loads, then confirm the visit appears in GA4's Realtime report with the right source and medium.</li>
+<li><strong>Log it.</strong> Paste the finished link into your team's UTM sheet (template below) before you use it anywhere.</li>
+</ol>
+<p>You can build links by hand, with a spreadsheet formula, or with Google's free Campaign URL Builder. Many ad platforms also let you add UTMs once at account or campaign level using dynamic placeholders — Meta Ads, for example, has a URL parameters field with values such as <code>{{campaign.name}}</code> and <code>{{ad.name}}</code> that fill in automatically.</p>
+
+<h3>Google Ads is the exception</h3>
+<p>For Google Ads, turn on <strong>auto-tagging</strong> and link your Google Ads account to GA4. Auto-tagging adds a click ID (<code>gclid</code>) to each click and passes richer data — campaign, ad group, keyword, cost — than manual UTMs can. Adding manual UTMs on top of auto-tagging can create conflicting data, so most advertisers rely on auto-tagging alone for Google Ads and use UTMs for every other channel. Our <a href="/academy/google-ads-for-beginners/">Google Ads for beginners guide</a> covers the account setup.</p>
+
+<h2 id="channels">Choosing utm_medium values so GA4 groups traffic correctly</h2>
+<p>GA4 sorts traffic into channels such as Paid Social, Organic Social, Email and Paid Search using rules based mainly on source and medium. If your medium doesn't match a rule, the traffic lands in <strong>Unassigned</strong> and your channel reports stop adding up. Google publishes these rules on its "Default channel group" help page and updates them occasionally, so check it when you set up your convention. At the time of writing, these values work reliably:</p>
+<table>
+<thead><tr><th>Traffic</th><th>utm_source</th><th>utm_medium</th><th>GA4 default channel</th></tr></thead>
+<tbody>
+<tr><td>Facebook / Instagram ads</td><td><code>facebook</code> or <code>instagram</code></td><td><code>paid_social</code> or <code>cpc</code></td><td>Paid Social</td></tr>
+<tr><td>Organic social posts</td><td><code>linkedin</code>, <code>facebook</code></td><td><code>social</code></td><td>Organic Social</td></tr>
+<tr><td>Newsletters and email sequences</td><td><code>newsletter</code> or your tool's name</td><td><code>email</code></td><td>Email</td></tr>
+<tr><td>Microsoft Ads (manual tags)</td><td><code>bing</code></td><td><code>cpc</code></td><td>Paid Search</td></tr>
+<tr><td>Display or programmatic banners</td><td>network name</td><td><code>display</code> or <code>banner</code></td><td>Display</td></tr>
+<tr><td>Affiliate and publisher partners</td><td>partner name</td><td><code>affiliate</code></td><td>Affiliates</td></tr>
+<tr><td>Text messages</td><td><code>sms_provider</code></td><td><code>sms</code></td><td>SMS</td></tr>
+<tr><td>QR codes on print or direct mail</td><td><code>flyer</code>, <code>postcard</code></td><td><code>qr</code> or <code>print</code></td><td>Usually Unassigned — use a custom channel group</td></tr>
+</tbody>
+</table>
+<p>For paid social, GA4 needs both a recognised social source and a paid-looking medium (one containing "cp", "ppc", "retargeting" or starting with "paid"). A medium of <code>social</code> on a paid ad will be counted as organic — one of the most common reasons paid social looks weaker in GA4 than it is.</p>
+
+<h2 id="template">Free UTM naming template (copy this)</h2>
+<p>The single biggest UTM problem isn't technical; it is three people tagging the same channel three different ways (<code>Facebook</code>, <code>fb</code>, <code>facebook.com</code>). Agree on one convention and write it down. Copy this table into a spreadsheet and make it the only place tagged links are created:</p>
+<table>
+<thead><tr><th>Field</th><th>Convention</th><th>Allowed values / format</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>utm_source</td><td>Platform or sender, one word</td><td>facebook, instagram, linkedin, tiktok, youtube, bing, newsletter, partner name</td><td>facebook</td></tr>
+<tr><td>utm_medium</td><td>Must match a GA4 channel rule</td><td>paid_social, social, email, cpc, display, affiliate, sms, qr</td><td>paid_social</td></tr>
+<tr><td>utm_campaign</td><td>yyyy-mm_offer_audience</td><td>Date first so campaigns sort in order</td><td>2026-11_free_quote_homeowners</td></tr>
+<tr><td>utm_content</td><td>format_angle_version</td><td>Describes the creative, not the campaign</td><td>video_testimonial_v2</td></tr>
+<tr><td>utm_term</td><td>Keyword or audience</td><td>Optional; underscores between words</td><td>lookalike_buyers_1pct</td></tr>
+<tr><td>Final URL</td><td>Built by formula</td><td>Never typed by hand</td><td>https://example.com/free-quote/?utm_source=facebook&amp;…</td></tr>
+<tr><td>Owner / date</td><td>Who created it and when</td><td>Initials, yyyy-mm-dd</td><td>SD, 2026-11-12</td></tr>
+</tbody>
+</table>
+<p>A simple spreadsheet formula to build the final URL (with the landing page in A2 and the five values in B2–F2) is:</p>
+<blockquote><p><code>=A2&amp;"?utm_source="&amp;LOWER(B2)&amp;"&amp;utm_medium="&amp;LOWER(C2)&amp;"&amp;utm_campaign="&amp;LOWER(D2)&amp;"&amp;utm_content="&amp;LOWER(E2)&amp;"&amp;utm_term="&amp;LOWER(F2)</code></p></blockquote>
+<p>Wrapping each value in <code>LOWER()</code> enforces lowercase automatically, so a stray capital letter can't split your reports into "Facebook" and "facebook" rows.</p>
+
+<h2 id="where">Where to use UTMs — and where not to</h2>
+<h3>Always tag</h3>
+<ul>
+<li>Paid social, native, display and programmatic ads.</li>
+<li>Email newsletters, automated sequences and SMS links.</li>
+<li>Links in your social bios and organic posts, if you want to separate them from other referral traffic.</li>
+<li>Links you give partners, affiliates, sponsors and podcasts.</li>
+<li>QR codes on flyers, postcards, packaging and event banners — point them to a tagged URL (a short redirect keeps the QR code simple).</li>
+</ul>
+<h3>Never tag</h3>
+<ul>
+<li><strong>Internal links on your own website</strong> (menus, banners, buttons between your own pages). A UTM on an internal link overwrites the visitor's real source, so a lead that came from Google suddenly looks like it came from your homepage banner. Use GA4 events to track internal clicks instead.</li>
+<li><strong>Google Ads with auto-tagging on</strong>, as covered above.</li>
+<li><strong>Organic search listings</strong> — you don't control those links, and GA4 already attributes them to Organic Search.</li>
+</ul>
+
+<h2 id="reports">Finding your UTM data in GA4</h2>
+<p>In GA4, go to <strong>Reports → Acquisition → Traffic acquisition</strong>. The default view groups sessions by "Session default channel group". Click the dimension drop-down to switch to <strong>Session source / medium</strong> or <strong>Session campaign</strong>, and use the plus icon to add a secondary dimension such as <strong>Session manual ad content</strong> to see your <code>utm_content</code> values.</p>
+<p>To see which campaigns produced leads, not just visits, you need conversions — called <strong>key events</strong> in GA4 — set up for form submissions, calls or purchases. Then add the key event column to the same report. The free <a href="/academy/courses/ga4-for-beginners/">GA4 for Beginners</a> course walks through key events, reports and explorations step by step, and our <a href="/academy/analytics-and-attribution-ga4/">GA4 analytics and attribution guide</a> explains how GA4 decides which channel gets credit.</p>
+<p>A practical tip: GA4 can take up to a day or two to fully process data in standard reports. Use the Realtime report to check that a new link works, and judge performance on complete days.</p>
+
+<h2 id="calls">UTMs, phone calls and offline leads</h2>
+<p>UTMs live in the URL, so they disappear the moment a visitor picks up the phone or fills in a paper form. If calls matter to your business, connect the two:</p>
+<ul>
+<li><strong>Dynamic number insertion (DNI)</strong> call tracking reads the visitor's source and UTMs and shows a unique phone number, so each call can be tied back to the campaign. See <a href="/academy/call-tracking-101/">Call Tracking 101</a> for how DNI works.</li>
+<li><strong>Hidden form fields</strong> can capture UTM values from the URL and save them with each lead in your CRM, so you can later compare campaigns by sales, not just form fills.</li>
+<li><strong>Offline media</strong> such as direct mail and radio can use a dedicated tracking number or a short vanity URL that redirects to a tagged link.</li>
+</ul>
+<p>Once leads carry their campaign data into your CRM, you can calculate true cost per lead and cost per customer for every campaign rather than relying on platform-reported numbers.</p>
+
+<h2 id="mistakes">Common UTM mistakes</h2>
+<ul>
+<li><strong>Inconsistent capitalisation and spelling.</strong> <code>Email</code>, <code>email</code> and <code>e-mail</code> can show up as separate rows. Lowercase everything and use the sheet.</li>
+<li><strong>Using <code>social</code> as the medium for paid ads.</strong> Paid traffic gets counted as organic.</li>
+<li><strong>Putting campaign details in utm_source.</strong> <code>utm_source=facebook_black_friday</code> breaks every source report. Keep each field to its job.</li>
+<li><strong>Tagging internal links.</strong> It wipes out the original source of your best visitors.</li>
+<li><strong>Personal data in UTMs.</strong> Never put names, email addresses or phone numbers in a URL; it is sent to analytics tools and may be stored in logs, which breaks Google's policies and privacy rules.</li>
+<li><strong>Redirects that drop parameters.</strong> Some link shorteners or site redirects strip everything after the <code>?</code>. Test the final landing URL, not just the short link.</li>
+<li><strong>No record of what was sent.</strong> Six months later nobody remembers what <code>utm_content=v3</code> meant. The sheet is your memory.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<h3>Do UTM parameters affect SEO?</h3>
+<p>Not when used correctly. UTMs belong on links you share in ads, emails and social posts, not on links inside your own site. Your pages should use a canonical tag pointing to the clean URL, which most website platforms add by default, so search engines index the version without parameters.</p>
+<h3>Are UTM parameters case-sensitive?</h3>
+<p>The parameter names must be written exactly in lowercase (<code>utm_source</code>, not <code>UTM_Source</code>). Values with different capitalisation can appear as separate rows in reports, so the safest rule is to write all values in lowercase.</p>
+<h3>What is the difference between utm_source and utm_medium?</h3>
+<p>Source is the specific sender, such as facebook, google or your newsletter. Medium is the category of traffic, such as paid_social, cpc or email. One source can have several mediums: facebook / paid_social for ads and facebook / social for organic posts.</p>
+<h3>Do I need UTMs for Google Ads?</h3>
+<p>Usually not. Turn on auto-tagging and link Google Ads to GA4; that passes more detail than manual UTMs. Use UTMs for Microsoft Ads, Meta, TikTok, LinkedIn, email and everything else.</p>
+<h3>Why is my tagged traffic showing as Unassigned in GA4?</h3>
+<p>The source and medium combination didn't match any of GA4's default channel rules — for example, <code>utm_medium=qr</code> or a typo like <code>emial</code>. Fix the medium on future links, or create a custom channel group in GA4's admin settings to classify your own values.</p>
+<h3>Can UTMs track phone calls?</h3>
+<p>Not on their own. Use call tracking with dynamic number insertion, which reads the UTMs on the landing page and assigns a tracking number, so each call is tied back to its campaign.</p>
+
+<h2>Next step: turn tagged clicks into decisions</h2>
+<p>UTMs only pay off when you act on what they tell you. Learn to read the reports in our free <a href="/academy/courses/ga4-for-beginners/">GA4 for Beginners</a> course, then go further with tracking, attribution and reporting automation in <a href="/academy/courses/analytics-tracking-automation/">Analytics, Tracking &amp; Automation</a>. When your campaigns are tagged, plug the numbers into the <a href="/academy/labs/roas/">ROAS lab</a> to see which ones are actually making money.</p>

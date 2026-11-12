@@ -66,6 +66,29 @@
       "updated": "2026-11-12T00:10:00+05:30",
       "body_file": "articles/call-tracking-101.html",
       "replace": true
+    },
+    {
+      "slug": "utm-parameters-guide",
+      "title": "UTM Parameters: How to Tag Campaigns for GA4 (2026)",
+      "meta": "Learn what UTM parameters are, how to build UTM links, which utm_medium values GA4 groups correctly, plus a free UTM naming template to copy.",
+      "excerpt": "UTM tags tell GA4 exactly which campaign, platform and ad sent each visitor. Here's how to build them, the values GA4 recognises, and a naming template you can copy.",
+      "category": "tracking",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-12T09:30:00+05:30",
+      "body_file": "articles/utm-parameters-guide.html"
+    },
+    {
+      "slug": "customer-acquisition-cost-ltv",
+      "title": "CAC and LTV Explained: What You Can Afford Per Lead",
+      "meta": "Learn how to calculate CAC, LTV, the LTV:CAC ratio and payback period, then turn them into the maximum cost per lead you can afford. Free worksheet.",
+      "excerpt": "Four numbers decide whether a customer is worth winning: CAC, LTV, the LTV:CAC ratio and payback. Here's how to calculate each and turn them into a maximum cost per lead.",
+      "category": "business",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-12T09:30:00+05:30",
+      "body_file": "articles/customer-acquisition-cost-ltv.html",
+      "replace": true
     }
   ],
   "courses": [
