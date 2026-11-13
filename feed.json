@@ -89,6 +89,29 @@
       "updated": "2026-11-12T09:30:00+05:30",
       "body_file": "articles/customer-acquisition-cost-ltv.html",
       "replace": true
+    },
+    {
+      "slug": "google-ads-quality-score",
+      "title": "Google Ads Quality Score: What It Is & How to Fix It",
+      "meta": "Learn what Google Ads Quality Score is, how its three components work, and how to raise a low score with our triage table that tells you what to fix first.",
+      "excerpt": "Quality Score rates each keyword 1–10 on expected CTR, ad relevance and landing page experience. Here's how to read it and which fix to make first.",
+      "category": "search",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-13T09:00:00+05:30",
+      "body_file": "articles/google-ads-quality-score.html"
+    },
+    {
+      "slug": "keyword-research-for-pay-per-call",
+      "title": "Keyword Research for Pay Per Call: Intent & Negatives",
+      "meta": "Find keywords that drive billable calls, not just clicks: intent layers, vertical modifiers, match types, a negative keyword list and a free scoring sheet.",
+      "excerpt": "In pay per call you're paid for conversations, not clicks. Here's how to pick action-intent keywords, block bad traffic and score your list before you spend.",
+      "category": "search",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-13T09:00:00+05:30",
+      "body_file": "articles/keyword-research-for-pay-per-call.html",
+      "replace": true
     }
   ],
   "courses": [

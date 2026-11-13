@@ -1,0 +1,119 @@
+<p><strong>Short answer:</strong> Quality Score is a 1–10 rating Google Ads gives each keyword. It shows how your ads compare with other advertisers' ads for the same search. It is built from three parts: <strong>expected click-through rate</strong>, <strong>ad relevance</strong> and <strong>landing page experience</strong>. Each part is rated Above average, Average or Below average. Google calls Quality Score a <em>diagnostic tool</em>. The number itself is not used in the auction. The auction runs on real-time quality signals that track closely with it, though, so a higher score usually goes with a better ad position at a lower cost per click. To raise it, find the part rated "Below average" and fix that one. Tighter keyword groups help expected CTR and ad relevance. A faster, more relevant page that matches the search fixes landing page experience. This guide shows where to find your scores, how to read them and a triage table that tells you what to fix first.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#what-is-it">What Quality Score is (and what it isn't)</a></li>
+<li><a href="#components">The three components explained</a></li>
+<li><a href="#find">How to see Quality Score in your account</a></li>
+<li><a href="#why">Why Quality Score affects what you pay</a></li>
+<li><a href="#triage">Quality Score triage table: what to fix first</a></li>
+<li><a href="#improve">How to improve each component</a></li>
+<li><a href="#calls">Quality Score for call campaigns</a></li>
+<li><a href="#mistakes">Common Quality Score mistakes</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="what-is-it">What Quality Score is (and what it isn't)</h2>
+<p>Quality Score is Google's summary of how relevant and useful your ads and landing pages are likely to be for people searching a particular keyword. It is reported at the <strong>keyword level</strong>, on a scale from 1 to 10, and it compares you with other advertisers who showed ads for the exact same keyword over the past 90 days.</p>
+<p>Three points about it are easy to get wrong:</p>
+<ul>
+<li><strong>It is a diagnostic, not a lever.</strong> Google says Quality Score is not an input in the ad auction. Each time an ad is eligible to show, Google calculates quality from real-time signals: the exact search, the device, the location, the time of day and more. Your 1–10 score is an averaged, backward-looking summary of those signals. That makes it useful for spotting problems, but it is not something to chase for its own sake.</li>
+<li><strong>It is relative.</strong> A 5/10 means you are roughly in line with competitors, not that you are failing. A 3 in a vertical full of strong advertisers can mean you have serious work to do. A 7 does not mean you're done.</li>
+<li><strong>It can be blank.</strong> A dash ("—") means there aren't enough searches for that exact keyword to give a score yet. That is normal for low-volume, long-tail keywords.</li>
+</ul>
+<p>The score is also not a measure of profit. A keyword with a 9/10 can still lose money if the clicks don't turn into leads, calls or sales. Treat Quality Score as one input. Your <a href="/academy/what-is-cost-per-lead/">cost per lead</a> and return on ad spend are the numbers that pay the bills.</p>
+
+<h2 id="components">The three components explained</h2>
+<table>
+<thead><tr><th>Component</th><th>What Google is judging</th><th>What usually drives it</th></tr></thead>
+<tbody>
+<tr><td>Expected click-through rate (CTR)</td><td>How likely people are to click your ad when it shows for this keyword, adjusted for factors like ad position and extensions</td><td>Headlines that echo the search, a clear offer, useful assets (sitelinks, calls, callouts), a strong brand</td></tr>
+<tr><td>Ad relevance</td><td>How closely your ad's message matches the intent behind the search</td><td>Keyword grouping: one tight theme per ad group, with ads written for that theme</td></tr>
+<tr><td>Landing page experience</td><td>How relevant and useful the page is to someone who clicked, and how easy it is to use</td><td>Page content that matches the ad and the search, loading speed, mobile usability, clear contact details and navigation</td></tr>
+</tbody>
+</table>
+<p>Expected CTR is a prediction. It can differ from the CTR you see in your reports, because Google adjusts for things like position: an ad in the top slot naturally gets more clicks than one lower down. Google doesn't publish how much each component counts, so be wary of articles that claim exact weightings.</p>
+
+<h2 id="find">How to see Quality Score in your account</h2>
+<ol>
+<li>In Google Ads, open <strong>Campaigns → Audiences, keywords and content → Search keywords</strong>.</li>
+<li>Click the <strong>columns</strong> icon, then <strong>Modify columns</strong>.</li>
+<li>Open the <strong>Quality Score</strong> section and add: <em>Quality Score</em>, <em>Exp. CTR</em>, <em>Ad relevance</em> and <em>Landing page exp.</em> You can also add the "(hist.)" versions to see how each changed over a date range.</li>
+<li>Save the column set so you don't have to rebuild it next time.</li>
+<li>Sort by <strong>Cost</strong>, highest first. Fix the keywords that spend the most before you fix the ones with the lowest scores.</li>
+</ol>
+<p>Menu names in Google Ads change from time to time. If you can't find the path, search "Quality Score" in the account's search bar.</p>
+
+<h2 id="why">Why Quality Score affects what you pay</h2>
+<p>Google decides where your ad shows, and whether it shows at all, using <strong>Ad Rank</strong>. Ad Rank combines your bid, the auction-time quality of your ad and page, the context of the search, and the expected impact of your assets. Because quality is part of that mix, a more relevant ad can win a higher position than a competitor who bids more.</p>
+<p>A simplified illustration (not Google's formula, which is not public): two advertisers bid on "emergency plumber near me". Advertiser A bids more, but the ad is generic and links to a homepage. Advertiser B bids less, but the headline repeats "Emergency Plumber" and offers "Call Now – 24/7", and the link goes to a mobile-friendly emergency page with a click-to-call button. Google judges B's ad more likely to satisfy the searcher. B can win the higher slot, and usually pays less per click for it. This is why a low Quality Score acts like a tax: you pay more for the same position, or get worse positions for the same money.</p>
+<p>To see what a change in cost per click does to your margins, run your numbers through the <a href="/academy/labs/ppc-profit/">PPC profit lab</a>.</p>
+
+<h2 id="triage">Quality Score triage table: what to fix first</h2>
+<p>Use this table for any keyword that spends real money and scores 6 or below. Find the row that matches its three component ratings and start with the first action.</p>
+<table>
+<thead><tr><th>Exp. CTR</th><th>Ad relevance</th><th>Landing page</th><th>Likely problem</th><th>First action</th></tr></thead>
+<tbody>
+<tr><td>Below avg</td><td>Below avg</td><td>Any</td><td>The keyword sits in an ad group whose ads are about something else</td><td>Move it into its own tightly themed ad group with ads written for it</td></tr>
+<tr><td>Below avg</td><td>Average / Above</td><td>Any</td><td>The ad is on topic but not compelling, or the keyword attracts browsers</td><td>Test new headlines with the offer and a reason to act; add sitelinks, call and callout assets; check the search terms report for poor-intent matches</td></tr>
+<tr><td>Average / Above</td><td>Below avg</td><td>Any</td><td>The ad is clickable but doesn't speak to this exact search</td><td>Put the keyword's core phrase in a headline; split the ad group if it mixes themes</td></tr>
+<tr><td>Average / Above</td><td>Average / Above</td><td>Below avg</td><td>The page doesn't deliver what the ad promised, or it's slow or hard to use on mobile</td><td>Send the click to a page that matches the search; fix speed and mobile layout; put the offer and contact details above the fold</td></tr>
+<tr><td>Below avg</td><td>Below avg</td><td>Below avg</td><td>The keyword probably doesn't fit your offer</td><td>Ask whether you should bid on it at all; pause it or add a negative if the intent is wrong</td></tr>
+<tr><td>Average</td><td>Average</td><td>Average</td><td>Nothing is broken; you're in line with competitors</td><td>Leave it alone unless it's a top spender; then test ads and pages to move one component to Above average</td></tr>
+</tbody>
+</table>
+<p>One rule: <strong>only change one thing at a time</strong> for a given keyword. Then wait. The component ratings update as new impressions come in, so a high-volume keyword shows movement within days, while a small one may take weeks.</p>
+
+<h2 id="improve">How to improve each component</h2>
+<h3>Raise expected CTR</h3>
+<ul>
+<li><strong>Mirror the search.</strong> If people search "same day boiler repair", a headline that says "Same-Day Boiler Repair" tells them they're in the right place.</li>
+<li><strong>Lead with the offer.</strong> Price, speed, guarantee, free quote: give a concrete reason to click instead of generic claims like "best service".</li>
+<li><strong>Use assets.</strong> Sitelinks, callouts, structured snippets and call assets make the ad bigger and give people more reasons to click. See our <a href="/academy/google-ads-for-beginners/">Google Ads for beginners</a> guide for setting them up.</li>
+<li><strong>Cut poor-intent traffic.</strong> Searches like "jobs", "free" or "how to" pull CTR down. Add them as <a href="/academy/keyword-research-for-pay-per-call/">negative keywords</a>.</li>
+</ul>
+<h3>Raise ad relevance</h3>
+<ul>
+<li><strong>Group keywords tightly.</strong> Each ad group should cover one theme you could describe in three or four words. "Water heater repair" and "water heater installation" are different searches and belong in different ad groups.</li>
+<li><strong>Write ads for the group.</strong> At least two or three of your responsive search ad headlines should contain the group's core phrase or a close variant.</li>
+<li><strong>Don't over-pin.</strong> Pinning one keyword headline in position 1 can help relevance, but pinning everything limits Google's ability to test combinations.</li>
+</ul>
+<h3>Raise landing page experience</h3>
+<ul>
+<li><strong>Match the message.</strong> The page headline should continue the ad's promise. A "24/7 emergency" ad that lands on a general services page loses people.</li>
+<li><strong>Load fast, especially on mobile.</strong> Compress images, remove unneeded scripts and test with Google's PageSpeed Insights.</li>
+<li><strong>Be transparent.</strong> Show who you are, how to contact you and what happens after someone fills a form or calls. Avoid pop-ups that block the content.</li>
+<li><strong>Make the next step obvious.</strong> One clear call to action: a form, a button or a tap-to-call number. Our blueprint for <a href="/academy/landing-pages-that-make-the-phone-ring/">landing pages that make the phone ring</a> walks through the layout.</li>
+</ul>
+
+<h2 id="calls">Quality Score for call campaigns</h2>
+<p>If you run pay-per-call or lead-generation campaigns, Quality Score matters even more. A cheaper click leaves more room under your <a href="/academy/break-even-cpc-for-pay-per-call/">break-even CPC</a>. A few things specific to calls:</p>
+<ul>
+<li><strong>Call assets help CTR, not just calls.</strong> A visible phone number gives mobile searchers who are ready to talk a one-tap option.</li>
+<li><strong>Don't let a high score hide bad calls.</strong> A keyword can have a 9/10 and still produce short, non-billable calls. Judge keywords by billable calls, tracked through <a href="/academy/call-tracking-101/">call tracking</a>, not by Quality Score.</li>
+<li><strong>Stay compliant.</strong> Ads and pages that look like a government agency or another brand can be disapproved, and they mislead callers. Google may also rate those pages poorly. Be clear about who you are.</li>
+</ul>
+
+<h2 id="mistakes">Common Quality Score mistakes</h2>
+<ul>
+<li><strong>Chasing 10/10 on every keyword.</strong> Your time is better spent on the few keywords that carry most of your spend.</li>
+<li><strong>Reading the score for broad keywords as the full picture.</strong> Quality Score is calculated for exact searches of the keyword. A broad match keyword can match many different searches, and your quality on those can differ.</li>
+<li><strong>Deleting and re-adding keywords to "reset" the score.</strong> Quality is judged on the keyword, ad and page together. Re-adding the same keyword with the same ads and page won't fix anything.</li>
+<li><strong>Changing ads, page and bids all at once.</strong> You won't know which change helped.</li>
+<li><strong>Ignoring the search terms report.</strong> The keyword's score can look fine while the actual searches you pay for drift away from your offer.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<h3>What is a good Quality Score in Google Ads?</h3>
+<p>There's no universal target because the score is relative to your competitors. As a working rule, 7 or above on your main keywords is healthy, 5–6 is average, and 4 or below on a keyword that spends real money is worth investigating with the triage table above.</p>
+<h3>How often does Quality Score update?</h3>
+<p>It updates as new data comes in, so busy keywords can move within a few days. Keywords with few searches change slowly or may show a dash ("—") until there's enough data.</p>
+<h3>Does Quality Score affect Performance Max or Display campaigns?</h3>
+<p>Quality Score is reported for Search keywords. Other campaign types still weigh ad quality in their auctions, but they don't show a 1–10 keyword score.</p>
+<h3>Does a new account start with a low Quality Score?</h3>
+<p>New keywords start without a score. They get one once they gather enough impressions on exact searches. Focus on relevance from day one: tight ad groups, matching ads and a matching landing page.</p>
+<h3>Can I improve Quality Score by bidding higher?</h3>
+<p>Not directly. A higher bid can raise your position, and a higher position raises your raw CTR. Expected CTR is adjusted for position, though, so bidding more is not a dependable way to raise the score.</p>
+
+<h2>Next step: build campaigns that score well from day one</h2>
+<p>Quality Score rewards the basics done well: tight keyword groups, ads that answer the search and pages that keep their promise. Learn the full workflow, from keyword research to bidding and reporting, in our <a href="/academy/courses/google-ads-from-zero/">Google Ads from Zero</a> course. Then practise writing relevant, clickable ads in the <a href="/academy/labs/google-ad/">Google Ad lab</a>. If your pages are the weak point, the <a href="/academy/courses/landing-pages-lead-magnets/">Landing Pages &amp; Lead Magnets</a> course shows how to build pages that convert.</p>
