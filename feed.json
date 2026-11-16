@@ -112,6 +112,17 @@
       "updated": "2026-11-13T09:00:00+05:30",
       "body_file": "articles/keyword-research-for-pay-per-call.html",
       "replace": true
+    },
+    {
+      "slug": "google-ads-bidding-strategies",
+      "title": "Google Ads Bidding Strategies: Which One to Use",
+      "meta": "Google Ads bidding strategies explained: Manual CPC, Maximize clicks, Smart Bidding, target CPA and ROAS, plus a decision table for your account stage.",
+      "excerpt": "How each Google Ads bid strategy works, which one fits your account stage, and how to set a target CPA you can actually afford.",
+      "category": "search",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-16T14:10:00+05:30",
+      "body_file": "articles/google-ads-bidding-strategies.html"
     }
   ],
   "courses": [

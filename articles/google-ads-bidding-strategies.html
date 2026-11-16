@@ -1,0 +1,130 @@
+<p><strong>Short answer:</strong> A bidding strategy tells Google Ads how to set your bid in each auction. There are two families. With <strong>manual bidding</strong> (Manual CPC) you set the maximum cost per click yourself. With <strong>automated bidding</strong>, Google sets the bid for every auction toward a goal you choose: clicks (Maximize clicks), visibility (Target impression share), conversions (Maximize conversions, with an optional target CPA) or conversion value (Maximize conversion value, with an optional target ROAS). The conversion- and value-based options are called <strong>Smart Bidding</strong>. They only work as well as your conversion tracking, so the right choice depends on two things: whether you track real conversions, and how many you get. A new account with no conversion data usually starts with Maximize clicks or Manual CPC. Once conversions flow in, it moves to Maximize conversions. Once the cost per conversion is stable, it adds a target CPA. Enhanced CPC, the old middle step, was retired for Search and Display campaigns in March 2025. This guide explains each strategy, gives you a decision table by account stage and shows how to set a target CPA you can afford.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#how">How bidding works in Google Ads</a></li>
+<li><a href="#strategies">The bidding strategies, one by one</a></li>
+<li><a href="#decision">Decision table: which strategy for your stage</a></li>
+<li><a href="#target">How to set a target CPA you can afford</a></li>
+<li><a href="#learning">The learning period and how not to break it</a></li>
+<li><a href="#calls">Bidding for phone-call campaigns</a></li>
+<li><a href="#mistakes">Common bidding mistakes</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="how">How bidding works in Google Ads</h2>
+<p>Every time someone searches, Google runs an auction among the advertisers whose keywords match. Your bid matters, but it is not the only factor. Ad Rank also takes in the expected quality of your ad and landing page, the context of the search, and your assets. That is why a strong ad with a lower bid can beat a weak ad with a higher one. Our <a href="/academy/google-ads-quality-score/">Quality Score guide</a> covers the quality side. This guide is about the bid.</p>
+<p>The bidding strategy decides <em>how</em> the bid is set:</p>
+<ul>
+<li><strong>Manual:</strong> you pick a maximum CPC per keyword or ad group. Google never bids above it.</li>
+<li><strong>Automated:</strong> Google sets a bid for each auction, using signals you can't see or act on by hand: device, location, time of day, the query, browser, past behaviour and more. This per-auction adjustment is what Google calls auction-time bidding.</li>
+</ul>
+<p>Automation is not magic. It optimizes for exactly the goal you give it. Tell it to get clicks and it finds cheap clicks, whether or not they convert. Tell it to get conversions while your "conversion" is a page view, and it gets you page views. So choosing the goal matters more than choosing the tool.</p>
+
+<h2 id="strategies">The bidding strategies, one by one</h2>
+
+<h3>Manual CPC</h3>
+<p>You set the maximum cost per click. It gives you full control and predictable costs per click, and it works with no conversion data at all. The downside is that you can't react to each auction the way automation can, and it takes your time. It suits new accounts on a tight budget, very small niches, and anyone who wants to learn what clicks really cost before handing over control.</p>
+
+<h3>Maximize clicks</h3>
+<p>Google tries to get as many clicks as possible within your daily budget. You can set a maximum CPC limit so a single click never costs more than you're willing to pay. It is a simple way to get traffic and data into a new campaign. The catch: it values every click the same. It will happily buy cheap, low-intent clicks, so pair it with tight keywords and a solid negative keyword list.</p>
+
+<h3>Target impression share</h3>
+<p>You choose where you want to appear (anywhere on the page, top of the page or absolute top) and what share of eligible auctions you want to show in. Google bids to hit that. It is mainly a visibility tool, often used on brand campaigns to stop competitors taking your name. Always set a maximum CPC limit, because chasing 100% absolute-top share on a competitive term can get very expensive.</p>
+
+<h3>Maximize conversions (with optional target CPA)</h3>
+<p>Google tries to get the most conversions possible for your budget. It spends the full budget doing that. If you add a <strong>target CPA</strong> (cost per acquisition), Google instead aims for as many conversions as it can at or near that average cost. In the Google Ads interface, target CPA is now set inside Maximize conversions for most campaigns, though you may still see "Target CPA" listed as a separate strategy, for example as a portfolio strategy. Without a target, Maximize conversions can push your cost per conversion up as it works to spend the whole budget. With a target set too low, it may hold back and spend very little.</p>
+
+<h3>Maximize conversion value (with optional target ROAS)</h3>
+<p>This works the same way, but it optimizes for the <em>value</em> of conversions instead of the count. It needs a value on each conversion, such as revenue per sale or a fixed payout per qualified lead. Adding a <strong>target ROAS</strong> (return on ad spend) tells Google the average return you want, for example 400% for $4 of conversion value per $1 spent. It suits e-commerce and lead generation where leads are worth different amounts. See <a href="/academy/what-is-roas/">What Is ROAS?</a> for the formula and how to work out break-even ROAS.</p>
+
+<h3>What happened to Enhanced CPC?</h3>
+<p>Enhanced CPC (eCPC) let you set manual bids while Google adjusted them up or down for clicks that seemed more likely to convert. Google retired it for Search and Display campaigns in March 2025. Campaigns that were still on it moved to Manual CPC. If an old tutorial tells you to "start on eCPC," the modern equivalent is Manual CPC while you gather data, then Maximize conversions.</p>
+
+<table>
+<thead><tr><th>Strategy</th><th>Optimizes for</th><th>Needs conversion tracking?</th><th>Main control</th></tr></thead>
+<tbody>
+<tr><td>Manual CPC</td><td>Nothing; you decide</td><td>No (but you should still have it)</td><td>Max CPC per keyword or ad group</td></tr>
+<tr><td>Maximize clicks</td><td>Clicks within budget</td><td>No</td><td>Budget, optional max CPC limit</td></tr>
+<tr><td>Target impression share</td><td>Visibility on the page</td><td>No</td><td>Position, % share, max CPC limit</td></tr>
+<tr><td>Maximize conversions</td><td>Number of conversions</td><td>Yes</td><td>Budget, optional target CPA</td></tr>
+<tr><td>Maximize conversion value</td><td>Total conversion value</td><td>Yes, with values</td><td>Budget, optional target ROAS</td></tr>
+</tbody>
+</table>
+
+<h2 id="decision">Decision table: which strategy for your stage</h2>
+<p>Here is the BFOUNT rule of thumb. Find the row that matches your campaign today, not where you hope it will be next month. "Recent conversions" means real, tracked actions in the last 30 days: qualified calls, form leads or sales, not page views.</p>
+<table>
+<thead><tr><th>Your situation</th><th>Start with</th><th>Move on when</th></tr></thead>
+<tbody>
+<tr><td>No conversion tracking set up yet</td><td>Fix tracking first. Meanwhile, Manual CPC or Maximize clicks with a max CPC limit</td><td>Conversions are recording correctly (test them)</td></tr>
+<tr><td>Tracking works, very few conversions (a handful a month)</td><td>Manual CPC, or Maximize clicks with a cap</td><td>Conversions arrive steadily every week</td></tr>
+<tr><td>Steady weekly conversions, CPA still bouncing around</td><td>Maximize conversions, no target</td><td>Several weeks of a fairly stable cost per conversion</td></tr>
+<tr><td>Stable CPA and you know your break-even CPA</td><td>Maximize conversions with a target CPA</td><td>You need to value leads differently</td></tr>
+<tr><td>Conversions have different, known values</td><td>Maximize conversion value, then add target ROAS</td><td>Keep refining values; review monthly</td></tr>
+<tr><td>Brand campaign, defending your own name</td><td>Target impression share (top of page) with a max CPC limit</td><td>Usually stays here</td></tr>
+<tr><td>Several small campaigns, each with thin data</td><td>A shared (portfolio) strategy across them</td><td>Each campaign can stand on its own data</td></tr>
+</tbody>
+</table>
+<p>Two notes on the table. First, the thresholds are deliberately soft. Google does not publish one universal minimum, and its guidance varies by strategy. What matters is a steady flow of real conversions, not a magic number. Second, moving down the table is a choice, not a rule. Some advertisers in small niches run Manual CPC profitably for years.</p>
+
+<h2 id="target">How to set a target CPA you can afford</h2>
+<p>A target CPA should come from your economics, not from a guess or a competitor's number. Use this four-step worksheet.</p>
+<ol>
+<li><strong>Find your break-even cost per lead.</strong> Take what a converted customer or a sold lead is worth to you and multiply by the share of leads that turn into money. Example: a sale is worth $300 in gross profit and 1 in 5 leads buys, so a lead is worth $60. Spend more than $60 per lead and you lose money. Our <a href="/academy/labs/max-cpl/">Max CPL lab</a> does this calculation for you.</li>
+<li><strong>Set your target margin.</strong> Decide how much of that $60 you want to keep. If you want to keep a third, your ceiling is $40 per lead.</li>
+<li><strong>Check your current CPA.</strong> Look at your actual cost per conversion over the last few weeks on Maximize conversions. Say it is $48.</li>
+<li><strong>Start near reality, then tighten.</strong> Set the first target close to your actual CPA ($48), not your dream number ($40). Then lower it in small steps every couple of weeks while you watch conversion volume. If volume drops sharply, you have gone too far.</li>
+</ol>
+<blockquote><p><strong>Why not start at $40?</strong> A target far below what the campaign achieves today tells Google to bid much lower. It often responds by entering fewer auctions, so you get fewer leads and too little data to learn from. A target near reality, lowered step by step, usually lands in a better place.</p></blockquote>
+<p>The same logic works for target ROAS: start near the ROAS you get today and raise it gradually. To check the whole picture, from cost per click to conversion rate to profit, use the <a href="/academy/labs/ppc-profit/">PPC Profit lab</a>.</p>
+
+<h2 id="learning">The learning period and how not to break it</h2>
+<p>When you switch to a Smart Bidding strategy, or make a big change to one, Google enters a <strong>learning period</strong>. The bid strategy status shows "Learning" while it recalibrates. Google's help center says calibration can take up to about 50 conversion events or three conversion cycles, depending on the strategy. A conversion cycle is how long people usually take to convert after clicking. Performance can swing during this time, so don't judge a new strategy in its first few days.</p>
+<p>Changes that commonly restart or extend learning:</p>
+<ul>
+<li>Switching to a different bid strategy</li>
+<li>Large changes to a target CPA or target ROAS</li>
+<li>Large budget changes</li>
+<li>Changing which conversion actions count toward the goal</li>
+<li>Adding or removing many campaigns from a portfolio strategy</li>
+</ul>
+<p>The practical rule: make one meaningful change at a time, make it in moderate steps, and give it time before you make the next one. Writing changes in a simple change log (date, what changed, why) makes it far easier to tell what actually helped.</p>
+
+<h2 id="calls">Bidding for phone-call campaigns</h2>
+<p>For pay-per-call and inbound-call businesses, the hardest part of Smart Bidding is the goal. If every call counts as a conversion, Google will chase short, unqualified calls, wrong numbers and existing customers. Fix the goal before you automate:</p>
+<ul>
+<li><strong>Count qualified calls only.</strong> Set a minimum call length that matches a real conversation, or better, import the outcome (sold or qualified) from your <a href="/academy/call-tracking-101/">call tracking</a> system.</li>
+<li><strong>Use values if payouts differ.</strong> If a buyer pays different amounts for different call types or regions, pass those values and use Maximize conversion value.</li>
+<li><strong>Base targets on payout, not hope.</strong> Your break-even cost per call comes from your payout and the share of calls that are billable. Our guide to <a href="/academy/break-even-cpc-for-pay-per-call/">break-even CPC for pay per call</a> walks through the maths.</li>
+<li><strong>Respect call hours.</strong> If calls outside buyer hours are worthless, schedule the ads so automation isn't paying for calls nobody can take.</li>
+</ul>
+<p>The search side matters as well. <a href="/academy/keyword-research-for-pay-per-call/">Keyword research for pay per call</a> shows how to pick high-intent keywords and negatives so the bidding works on the right traffic in the first place.</p>
+
+<h2 id="mistakes">Common bidding mistakes</h2>
+<ul>
+<li><strong>Automating with broken tracking.</strong> Duplicate conversions, page-view "conversions" or missing calls teach Smart Bidding the wrong lesson. Test every conversion action before you rely on it.</li>
+<li><strong>Counting micro-actions as primary conversions.</strong> Scroll depth, video plays and "visited contact page" can be tracked as secondary actions, but they should not drive bids for a lead-gen campaign.</li>
+<li><strong>Setting the target from your wish list.</strong> A target CPA far below your actual CPA usually starves the campaign of volume.</li>
+<li><strong>Changing things every day.</strong> Constant target and budget changes keep the strategy in learning and make results impossible to read.</li>
+<li><strong>Running Maximize clicks without a cap or negatives.</strong> It can fill the budget with cheap, irrelevant clicks.</li>
+<li><strong>Judging on too little data.</strong> A week with three conversions tells you very little. Compare like-for-like periods that cover your conversion cycle.</li>
+<li><strong>Ignoring the budget.</strong> A target CPA of $50 with a $30 daily budget leaves almost no room to learn. Your budget should comfortably cover several conversions at your target.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<h3>What is the best bidding strategy for a new Google Ads account?</h3>
+<p>There is no single best one, but most new accounts do well starting with Manual CPC or Maximize clicks with a maximum CPC limit. Both work without conversion history. Set up and test conversion tracking from day one, then move to Maximize conversions once real conversions arrive every week.</p>
+<h3>Is Smart Bidding better than manual bidding?</h3>
+<p>Smart Bidding can react to signals in every auction that you can't adjust by hand, so with good tracking and enough conversions it often beats manual bidding. With poor tracking or very little data it can do worse. The quality of your conversion data decides which wins.</p>
+<h3>Should I set a target CPA right away?</h3>
+<p>Usually not. Run Maximize conversions without a target first so you can see the cost per conversion the campaign naturally reaches. Then set a target near that number and lower it gradually toward your profitable ceiling.</p>
+<h3>Can I still use Enhanced CPC?</h3>
+<p>Not on Google Search or Display campaigns. Google retired Enhanced CPC there in March 2025, and those campaigns moved to Manual CPC. Microsoft Advertising is a separate platform with its own bidding options.</p>
+<h3>How long should I wait before judging a new bid strategy?</h3>
+<p>Wait until it has finished learning and covered at least one full conversion cycle. For many lead-gen accounts that means a couple of weeks, longer if conversions are few or slow. Don't make other big changes in the meantime.</p>
+<h3>What is a portfolio bid strategy?</h3>
+<p>It is one automated strategy shared across several campaigns. Pooling their data gives the strategy more conversions to learn from, which helps when each campaign on its own has thin data.</p>
+
+<h2>Next steps</h2>
+<p>Bidding is one lever. Keywords, ads, landing pages and tracking all feed it. To learn the full system step by step, from your first campaign to scaling with Smart Bidding, take our <a href="/academy/courses/google-ads-from-zero/">Google Ads from Zero</a> course. Before you set your first target CPA, run your numbers in the <a href="/academy/labs/max-cpl/">Max CPL lab</a> so you know exactly what a lead is worth to you. New to the platform? Start with <a href="/academy/google-ads-for-beginners/">Google Ads for Beginners</a>.</p>
