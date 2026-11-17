@@ -151,6 +151,16 @@
         "complete-marketer",
         "content-brand-builder"
       ]
+    },
+    {
+      "slug": "google-ads-for-beginners",
+      "file": "courses/google-ads-for-beginners.json",
+      "updated": "2026-11-17T09:00:00+05:30",
+      "paths": [
+        "complete-marketer",
+        "performance-marketer",
+        "paid-ads-specialist"
+      ]
     }
   ]
 }
