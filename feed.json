@@ -123,6 +123,17 @@
       "status": "published",
       "updated": "2026-11-16T14:10:00+05:30",
       "body_file": "articles/google-ads-bidding-strategies.html"
+    },
+    {
+      "slug": "google-ads-negative-keywords",
+      "title": "Google Ads Negative Keywords: A Practical Guide",
+      "meta": "Learn how Google Ads negative keywords work: match types, where to add them, a starter list for lead gen and pay-per-call, and a weekly routine.",
+      "excerpt": "Negative keywords stop Google Ads from paying for the wrong searches. Learn the match types, a starter list for lead gen and a 20-minute weekly routine.",
+      "category": "search",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-18T00:25:00+05:30",
+      "body_file": "articles/google-ads-negative-keywords.html"
     }
   ],
   "courses": [
