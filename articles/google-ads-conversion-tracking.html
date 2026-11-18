@@ -1,0 +1,144 @@
+<p><strong>Quick answer:</strong> Google Ads conversion tracking records what people do after they click your ad: a form submit, a phone call, a purchase or a qualified lead from your CRM. You create a conversion action in Google Ads (Goals &rarr; Conversions), install the Google tag or Google Tag Manager on your site, fire an event on the action you care about, and then choose the settings that matter most: <strong>Primary or Secondary</strong>, <strong>count One or Every</strong>, a <strong>value</strong> and a <strong>conversion window</strong>. Add enhanced conversions and Consent Mode so you lose fewer conversions, and check that everything is working before you let Smart Bidding run on the data.</p>
+
+<p>Tracking matters more than any bid or ad copy change, because Google's automated bidding optimises to whatever you tell it a conversion is. If you count page views as leads, it will buy you page views. This guide covers what to track, how to set it up step by step, the settings that decide what bidding learns from, call and offline conversions for lead gen, and a worksheet you can copy for your own account.</p>
+
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#what">What a conversion is in Google Ads</a></li>
+<li><a href="#choose">Choosing what to track</a></li>
+<li><a href="#setup">How to set up conversion tracking, step by step</a></li>
+<li><a href="#settings">The settings that decide what bidding learns</a></li>
+<li><a href="#calls">Tracking phone calls</a></li>
+<li><a href="#offline">Offline conversions: tracking qualified leads, not just form fills</a></li>
+<li><a href="#enhanced">Enhanced conversions and Consent Mode</a></li>
+<li><a href="#worksheet">Conversion action worksheet (copy this)</a></li>
+<li><a href="#check">How to check your tracking works</a></li>
+<li><a href="#mistakes">Common mistakes</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="what">What a conversion is in Google Ads</h2>
+<p>A conversion is an action you decide is valuable, recorded after someone interacts with your ad. Google Ads attributes it back to the campaign, ad group, keyword and search term that led to it. That attribution is what turns your account from "we spent money" into "we spent this much per lead from this keyword".</p>
+<p>Each thing you track is a separate <strong>conversion action</strong>. A typical lead-gen account has a few: a website form submit, calls from ads, calls from the website, and ideally a qualified lead or sale imported from the CRM. Conversion actions are grouped into <strong>conversion goals</strong> (for example "Submit lead form" or "Phone call lead"), and campaigns bid towards goals.</p>
+<p>Conversion data feeds three things: your reports, your cost per lead or cost per acquisition, and Smart Bidding strategies such as Maximise conversions, Target CPA and Target ROAS. If you are using any of those, read our guide to <a href="/academy/google-ads-bidding-strategies/">Google Ads bidding strategies</a> alongside this one, because the strategy is only as good as the conversion data under it.</p>
+
+<h2 id="choose">Choosing what to track</h2>
+<p>Start from the business outcome and work backwards. Ask: "If Google bought me a million more of these, would I be happy?" If the answer is no, that action should not be a Primary conversion.</p>
+<table>
+<thead><tr><th>Action</th><th>Good as Primary?</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Purchase with revenue</td><td>Yes</td><td>Pass the real order value so you can use Target ROAS.</td></tr>
+<tr><td>Lead form submit (thank-you page or success event)</td><td>Yes, until you have CRM data</td><td>Fire on a confirmed submit, not on the button click.</td></tr>
+<tr><td>Calls from ads above a minimum length</td><td>Yes</td><td>Set the minimum call length to match a real enquiry.</td></tr>
+<tr><td>Qualified lead or sale imported from CRM</td><td>Yes, the best option</td><td>Teaches bidding the difference between junk and real leads.</td></tr>
+<tr><td>Clicks on a phone number on mobile</td><td>Usually Secondary</td><td>A tap is not a call; many taps never connect.</td></tr>
+<tr><td>Page views, scroll depth, time on site</td><td>No</td><td>Useful for diagnosis, easy for bots and window shoppers to trigger.</td></tr>
+<tr><td>Add to cart, begin checkout</td><td>Secondary</td><td>Watch them as funnel signals.</td></tr>
+</tbody>
+</table>
+<p>If you are not sure what a lead is worth, work it out first. Our <a href="/academy/what-is-cost-per-lead/">cost per lead guide</a> and the <a href="/academy/labs/max-cpl/">Max CPL lab</a> show how to get from close rate and deal value to the most you can afford per lead.</p>
+
+<h2 id="setup">How to set up conversion tracking, step by step</h2>
+<p>Menu names in Google Ads change from time to time, but the flow has stayed the same.</p>
+<ol>
+<li><strong>Create the conversion action.</strong> In Google Ads go to Goals &rarr; Conversions &rarr; Summary &rarr; New conversion action. Choose the source: Website, App, Phone calls or Import (for CRM and offline data).</li>
+<li><strong>Pick the goal and name it clearly.</strong> Choose the category (Submit lead form, Purchase, Phone call lead and so on). Use names a colleague will understand, such as "Lead form &ndash; quote request &ndash; thank-you page".</li>
+<li><strong>Set value, count and window.</strong> These settings are covered in the next section. Don't skip them; the defaults may not suit your business.</li>
+<li><strong>Install the Google tag.</strong> Add the Google tag to every page, either directly in the site header or through Google Tag Manager (GTM). GTM is the better choice if you track several actions or plan to add enhanced conversions, because changes don't need a developer each time.</li>
+<li><strong>Fire the conversion event on the right moment.</strong> Use the conversion ID and label that Google Ads gives you. Trigger it on a thank-you page load or on a confirmed form-success event. Avoid firing on a button click, because failed submits and double clicks get counted.</li>
+<li><strong>Link Google Ads and GA4 (optional, recommended).</strong> Linking lets you import GA4 key events and share audiences. Pick one source of truth per action, either the Google Ads tag or the GA4 import, so the same lead is not counted twice. Our <a href="/academy/analytics-and-attribution-ga4/">GA4 analytics and attribution guide</a> covers the GA4 side.</li>
+<li><strong>Test it.</strong> Submit a real test lead and confirm the tag fires (see <a href="#check">how to check</a> below).</li>
+</ol>
+<blockquote><p>Tip: tag your ad URLs with consistent <a href="/academy/utm-parameters-guide/">UTM parameters</a> too. Google Ads attributes conversions with the click ID, but UTMs let your CRM and analytics tools see the same campaign names.</p></blockquote>
+
+<h2 id="settings">The settings that decide what bidding learns</h2>
+<h3>Primary vs Secondary</h3>
+<p><strong>Primary</strong> actions are used for bidding and appear in the main Conversions column. <strong>Secondary</strong> actions are observation only: you see them in the All conversions column, but Smart Bidding does not optimise to them. Keep Primary for the actions you would pay for. Everything else can be Secondary.</p>
+<p>One detail catches people out: if a campaign uses a <strong>custom goal</strong>, Google Ads uses every action in that goal for bidding, whatever the Primary or Secondary setting says. Check which goals each campaign actually uses in campaign settings.</p>
+<h3>Count: One or Every</h3>
+<p><strong>One</strong> counts a single conversion per ad click, however many times the person converts. <strong>Every</strong> counts each conversion. Google's guidance is to use One for leads, so a person who submits a form twice or reloads the thank-you page is counted once, and Every for sales, where each purchase is real money. Check this setting on every action rather than assuming a default; it is one of the most common reasons lead counts look higher than the CRM.</p>
+<h3>Value</h3>
+<p>Give every Primary action a value, even an estimate. For purchases, pass the real order value from the site. For leads, use a reasoned figure: average deal value multiplied by your lead-to-sale rate. Values let you compare a form lead with a call lead and later move to value-based bidding. The <a href="/academy/labs/roas/">ROAS lab</a> helps you sense-check the numbers.</p>
+<h3>Conversion window</h3>
+<p>The click-through conversion window is how long after a click a conversion can still be credited to the ad. Match it to your real sales cycle. A same-day emergency service needs a short window; a B2B deal or insurance quote that closes weeks later needs a longer one, especially if you import offline sales.</p>
+<h3>Attribution model</h3>
+<p>Data-driven attribution is now the standard option for most conversion actions, and it shares credit across the ad clicks on the path. The older rule-based models such as first click and linear have been retired. Last click is still available if you need it for a specific reason.</p>
+
+<h2 id="calls">Tracking phone calls</h2>
+<p>For pay-per-call and local service businesses, calls are often the main conversion. Google Ads has three ways to track them:</p>
+<ul>
+<li><strong>Calls from ads:</strong> calls made from a call asset or a call-only ad, tracked with a Google forwarding number. You set a minimum call length, commonly 60 seconds, so short or misdialled calls are not counted.</li>
+<li><strong>Calls to a number on your website:</strong> the tag swaps the number on your site for a Google forwarding number for visitors who came from an ad.</li>
+<li><strong>Clicks on your number on mobile:</strong> counts taps on a phone link. Treat it as Secondary, because a tap does not mean a call happened.</li>
+</ul>
+<p>Set the minimum length to the point where a call usually becomes a genuine enquiry, not a fixed habit. If your buyer pays for calls over 90 seconds, a 60-second threshold will over-report. Many lead-gen teams also use a third-party call tracking platform and import qualified calls; our <a href="/academy/call-tracking-101/">call tracking 101 guide</a> explains how that works.</p>
+
+<h2 id="offline">Offline conversions: tracking qualified leads, not just form fills</h2>
+<p>A form submit tells Google someone filled in a form. It does not tell Google whether they picked up the phone, qualified or bought. Without that, bidding optimises for the cheapest form fills, and those are often the worst leads.</p>
+<p>Offline conversion import closes the gap:</p>
+<ol>
+<li>Capture the Google click ID (GCLID) in a hidden form field, or rely on <strong>enhanced conversions for leads</strong>, which matches hashed email or phone numbers instead.</li>
+<li>Store it with the lead in your CRM.</li>
+<li>When the lead reaches a stage you care about (qualified, appointment booked, sold), send that event back to Google Ads, using a direct CRM integration, scheduled uploads or the API.</li>
+<li>Make the qualified or sold action Primary and move the raw form submit to Secondary once you have enough volume.</li>
+</ol>
+<p>Upload regularly, ideally daily, so bidding gets fresh feedback. Uploads need to arrive within the conversion window of the original click.</p>
+
+<h2 id="enhanced">Enhanced conversions and Consent Mode</h2>
+<p><strong>Enhanced conversions</strong> send a hashed (SHA-256) copy of first-party data the customer gave you, such as email or phone, along with the conversion. Google matches it to signed-in Google accounts to recover conversions that cookies miss. You turn it on in the conversion settings and set it up with the Google tag, GTM or the API. It only works if your form actually collects an email or phone number.</p>
+<p><strong>Consent Mode</strong> passes each visitor's consent choice to Google tags through four signals: <code>ad_storage</code>, <code>analytics_storage</code>, <code>ad_user_data</code> and <code>ad_personalization</code>. In basic mode, tags do not load until the visitor consents. In advanced mode, tags send cookieless pings when consent is denied, and Google models the missing conversions. Consent Mode is not a cookie banner; you still need a consent management platform. If you advertise to users in the European Economic Area, Google requires consent signals for its measurement and personalisation features.</p>
+<p>Enhanced conversions and Consent Mode solve different problems, so most accounts should run both.</p>
+
+<h2 id="worksheet">Conversion action worksheet (copy this)</h2>
+<p>Fill in one row per action before you touch the tag. It forces the decisions that most accounts never make on purpose.</p>
+<table>
+<thead><tr><th>Field</th><th>Example: lead-gen service business</th><th>Your account</th></tr></thead>
+<tbody>
+<tr><td>Action name</td><td>Lead form &ndash; quote request</td><td></td></tr>
+<tr><td>Source</td><td>Website (GTM, form-success event)</td><td></td></tr>
+<tr><td>Fires when</td><td>Server confirms the submit; thank-you page loads</td><td></td></tr>
+<tr><td>Primary or Secondary</td><td>Primary now; Secondary once CRM import is live</td><td></td></tr>
+<tr><td>Count</td><td>One</td><td></td></tr>
+<tr><td>Value and how it is calculated</td><td>Average job value &times; lead-to-sale rate</td><td></td></tr>
+<tr><td>Click-through window</td><td>Matched to typical days from enquiry to sale</td><td></td></tr>
+<tr><td>Enhanced conversions</td><td>On (email and phone collected)</td><td></td></tr>
+<tr><td>Duplicate risk checked</td><td>Not also imported from GA4</td><td></td></tr>
+<tr><td>Test lead confirmed</td><td>Date, Tag Assistant result</td><td></td></tr>
+</tbody>
+</table>
+<p>Repeat it for calls (add the minimum call length) and for each CRM stage you import.</p>
+
+<h2 id="check">How to check your tracking works</h2>
+<ul>
+<li><strong>Tag Assistant:</strong> open your site with Google Tag Assistant, submit a test lead and confirm the conversion event fires once, with the right ID, label and value.</li>
+<li><strong>Conversion status:</strong> in Goals &rarr; Conversions, each action shows a status. "No recent conversions" or "Unverified" after a few days of traffic means something is wrong.</li>
+<li><strong>Diagnostics:</strong> the enhanced conversions and Consent Mode diagnostics in the conversion action show whether user data and consent signals are arriving.</li>
+<li><strong>Reconcile with the CRM:</strong> compare a week of Google Ads conversions against real leads in your CRM. A small gap is normal; a big one usually means double counting or missing tags.</li>
+</ul>
+
+<h2 id="mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Too many Primary actions.</strong> Page views or phone taps sitting next to real leads, so bidding chases the easy ones.</li>
+<li><strong>Counting the same lead twice.</strong> Google Ads tag and GA4 import both Primary, or count set to Every on a lead form.</li>
+<li><strong>Firing on the button click.</strong> Failed submits and validation errors are counted as leads.</li>
+<li><strong>No values.</strong> Every conversion looks equal, so a junk enquiry is worth the same as a booked job.</li>
+<li><strong>Never importing quality.</strong> The account optimises for form fills forever and lead quality slowly drops.</li>
+<li><strong>Changing goals constantly.</strong> Each big change to what counts makes Smart Bidding relearn. Make changes on purpose and give them time.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<h3>Do I need Google Tag Manager for Google Ads conversion tracking?</h3>
+<p>No. You can add the Google tag directly to your site. GTM makes it easier to manage several conversion actions, enhanced conversions and consent settings without editing site code each time.</p>
+<h3>Should I import conversions from GA4 or use the Google Ads tag?</h3>
+<p>Either works. The Google Ads tag is the most direct for bidding; GA4 imports are convenient if GA4 is already well set up. Choose one Primary source for each action so nothing is counted twice.</p>
+<h3>Why are my Google Ads conversions different from my CRM?</h3>
+<p>Common reasons are different attribution (Google credits the click date, your CRM may use the lead date), consent and cookie loss, duplicate counting, spam leads and conversions still inside their window. Reconcile weekly and look for a stable gap rather than an exact match.</p>
+<h3>How long does it take for conversions to show up?</h3>
+<p>Website conversions usually appear within a few hours, but can take longer. Imported offline conversions appear after the upload is processed. Recent days' figures can also rise as late conversions are credited back to the click date.</p>
+<h3>What is the difference between Conversions and All conversions?</h3>
+<p>Conversions includes only actions that bidding uses (Primary, or included in the campaign's goals). All conversions includes Secondary actions and some extra types as well.</p>
+<h3>Can I track phone calls without a third-party tool?</h3>
+<p>Yes. Google Ads can track calls from ads and calls to your website number with Google forwarding numbers. A third-party call tracking platform adds call recordings, qualification and routing, which matter more for pay-per-call buyers.</p>
+
+<h2 id="next">Next step</h2>
+<p>Conversion tracking is covered hands-on in our <a href="/academy/courses/google-ads-from-zero/">Google Ads From Zero course</a>, alongside campaign structure, keywords and bidding. For the wider measurement stack (GA4, UTMs and automated reporting), take the <a href="/academy/courses/analytics-tracking-automation/">Analytics, Tracking &amp; Automation course</a>. Before you set values, work out what a lead is really worth in the <a href="/academy/labs/max-cpl/">Max CPL lab</a>.</p>

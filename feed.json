@@ -134,6 +134,17 @@
       "status": "published",
       "updated": "2026-11-18T00:25:00+05:30",
       "body_file": "articles/google-ads-negative-keywords.html"
+    },
+    {
+      "slug": "google-ads-conversion-tracking",
+      "title": "Google Ads Conversion Tracking: Setup Guide",
+      "meta": "Set up Google Ads conversion tracking the right way: what to track, Primary vs Secondary, One vs Every, calls, offline imports and enhanced conversions.",
+      "excerpt": "Smart Bidding optimises to whatever you call a conversion. Learn what to track, the settings that matter, call and offline tracking, plus a worksheet to copy.",
+      "category": "tracking",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-18T09:30:00+05:30",
+      "body_file": "articles/google-ads-conversion-tracking.html"
     }
   ],
   "courses": [
