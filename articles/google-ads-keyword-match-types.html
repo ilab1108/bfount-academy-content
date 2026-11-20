@@ -1,0 +1,138 @@
+<p><strong>Quick answer:</strong> Google Ads has three keyword match types. <strong>Broad match</strong> (no symbols) reaches the widest set of related searches. <strong>Phrase match</strong> ("quotes") shows your ad on searches that include the meaning of your keyword. <strong>Exact match</strong> ([brackets]) shows it only on searches with the same meaning or intent. All three match close variants such as plurals and misspellings. Google recommends broad match with Smart Bidding. If you are just starting, have little conversion data, or work in a regulated vertical, begin with exact and phrase, add broad once your conversion tracking is reliable, and read your search terms report every week whatever you choose.</p>
+
+<p>Match types decide which searches you pay for, so they have more effect on your cost per lead than almost any other setting. This guide explains how each one works today (the rules changed several times after 2021), how Google picks between your keywords when more than one could match, and gives you a decision matrix you can use for every new campaign.</p>
+
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#what">What keyword match types are</a></li>
+<li><a href="#three">The three match types, side by side</a></li>
+<li><a href="#variants">Close variants: why exact isn't literal any more</a></li>
+<li><a href="#priority">Which keyword wins when several match</a></li>
+<li><a href="#matrix">Decision matrix: which match type to use</a></li>
+<li><a href="#structure">A simple structure for lead gen and pay-per-call</a></li>
+<li><a href="#aimax">Broad match, AI Max and keywordless matching</a></li>
+<li><a href="#mistakes">Common mistakes</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<h2 id="what">What keyword match types are</h2>
+<p>A keyword is not the search itself. It is an instruction to Google about which searches you want to be considered for. The match type tells Google how loosely to read that instruction.</p>
+<p>Think of it as a dial. Turn it towards exact and you get fewer searches, more control and usually higher intent. Turn it towards broad and you get more searches, less control, and you rely more on Google's understanding of your account. Neither end is "right". What matters is how much budget you have, how good your conversion data is and how expensive a bad click is in your vertical.</p>
+<p>For a pay-per-call buyer, one irrelevant call can cost more than a whole day of clicks. For an ecommerce store with thousands of products, missing searches can cost more than the waste. That's why the same match type can work in one account and fail in another.</p>
+
+<h2 id="three">The three match types, side by side</h2>
+<p>Here is the same keyword idea written three ways, with the kind of searches each could match. These are illustrations, not guarantees: Google decides matches using meaning, not a fixed rule list.</p>
+<table>
+<thead>
+<tr><th>Match type</th><th>How you write it</th><th>Could match</th><th>Should not match</th></tr>
+</thead>
+<tbody>
+<tr><td>Broad</td><td>emergency plumber</td><td>emergency plumber near me; 24 hour plumbing repair; burst pipe help tonight; plumber cost</td><td>Nothing is ruled out by syntax. Use negatives for limits.</td></tr>
+<tr><td>Phrase</td><td>"emergency plumber"</td><td>emergency plumber near me; cheap emergency plumber; emergency plumbers open now</td><td>plumber for emergency (if Google reads a different meaning); plumbing courses</td></tr>
+<tr><td>Exact</td><td>[emergency plumber]</td><td>emergency plumber; emergency plumbers; emergancy plumber; urgent plumber (same meaning)</td><td>emergency plumber jobs; emergency plumber salary</td></tr>
+</tbody>
+</table>
+
+<h3>Broad match</h3>
+<p>Broad match is the default when you add a keyword without symbols. Google describes it as the most comprehensive option: it can show your ad on searches related to your keyword, including ones that don't contain any of its words. To decide what's relevant it uses signals such as your landing page, the other keywords in the ad group and the searcher's recent activity. Broad match reaches every search that phrase and exact would reach, and more.</p>
+<p>Broad match works best with Smart Bidding, because the bidding system can bid down on weak searches and bid up on strong ones. Used with manual CPC and no negatives, it often spends budget on loosely related searches.</p>
+
+<h3>Phrase match</h3>
+<p>Phrase match is written in quotation marks. Your ad can show on searches that include the meaning of your keyword, with extra words before or after. Word order matters only when it changes the meaning. Since 2021 phrase match has also covered most of what the old "broad match modifier" (+keyword) did. That option no longer exists, so ignore older guides that still recommend it.</p>
+<p>Phrase match is a useful middle ground for lead generation: you capture long-tail versions like "emergency plumber in Dallas open now" without matching loosely related research searches.</p>
+
+<h3>Exact match</h3>
+<p>Exact match is written in square brackets. Your ad can show on searches with the same meaning or the same intent as your keyword. It gives you the most control and the least reach. Exact match keywords are also useful for priority: when a search is identical to one of your exact keywords, that keyword gets first claim (see <a href="#priority">prioritization</a>).</p>
+
+<h2 id="variants">Close variants: why exact isn't literal any more</h2>
+<p>All three match types match close variants. According to Google these include misspellings, singular and plural forms, stemmings (for example, floor and flooring), abbreviations, accents, and, for exact and phrase, searches with the same meaning or intent. So [car insurance quote] can match "auto insurance quote" or "quote for car insurance".</p>
+<p>This has two practical effects:</p>
+<ul>
+<li><strong>You don't need to add every plural and misspelling as a separate keyword.</strong> A tidy list of core ideas usually performs as well as a huge list of variations.</li>
+<li><strong>Exact match still needs negatives.</strong> If Google decides a search shares your intent, it can match even when it isn't the search you had in mind. Check the search terms report for exact keywords too.</li>
+</ul>
+<p>Negative keywords work the other way: they do <em>not</em> match close variants. Blocking "job" will not block "jobs". Our <a href="/academy/google-ads-negative-keywords/">negative keywords guide</a> covers how to handle that.</p>
+
+<h2 id="priority">Which keyword wins when several match</h2>
+<p>Once you use more than one match type, the same search will often match several of your keywords. Only one of your keywords can enter the auction for a search, so Google applies an order of preference. Here is how its help centre describes it:</p>
+<ol>
+<li><strong>Identical exact match first.</strong> If you have an eligible exact match keyword that is identical to the search (or to its spell-corrected version), that keyword is preferred over all your other keywords and over Performance Max.</li>
+<li><strong>Then identical phrase or broad.</strong> If no exact keyword is identical, Google looks for a phrase or broad keyword, or a Performance Max search theme, that is identical to the search.</li>
+<li><strong>Then relevance and Ad Rank.</strong> If nothing is identical, Google uses relevance signals together with Ad Rank to choose among the keywords that match.</li>
+</ol>
+<p>"Identical" is strict: spelling corrections count, but synonyms and plurals do not. So [emergency plumber] is identical to "emergancy plumber" after spell correction, but not to "emergency plumbers".</p>
+<p>What this means in practice: <strong>adding your best search terms as exact keywords is how you control which ad group, ad and landing page they get.</strong> If "emergency plumber near me" is your best converting search and you want it to go to a dedicated call-only ad, add it as an exact keyword in that ad group.</p>
+
+<h2 id="matrix">Decision matrix: which match type to use</h2>
+<p>Use this matrix when you set up a new campaign or ad group. Find the row that fits your situation best. If two rows apply, go with the more cautious one until you have data.</p>
+<table>
+<thead>
+<tr><th>Your situation</th><th>Start with</th><th>Why</th><th>Watch for</th></tr>
+</thead>
+<tbody>
+<tr><td>New account, fewer than ~30 conversions a month</td><td>Exact + phrase, Maximize Clicks or Manual CPC with a cap</td><td>Smart Bidding has little data to steer broad match</td><td>Low volume: add phrase variants before switching to broad</td></tr>
+<tr><td>Reliable conversion tracking and steady volume</td><td>Broad + Smart Bidding (Maximize Conversions / tCPA)</td><td>Bidding can price each search; broad finds terms you missed</td><td>Search terms drift: review weekly, keep negatives current</td></tr>
+<tr><td>Pay-per-call or high cost per bad lead</td><td>Exact for top terms, phrase for long-tail</td><td>A wrong call can cost more than many clicks</td><td>Only test broad in a separate campaign with its own budget</td></tr>
+<tr><td>Regulated vertical (insurance, finance, health, legal)</td><td>Exact + phrase</td><td>Google itself suggests phrase and exact for sensitive needs</td><td>Compliance: check that matched searches fit your approved offers</td></tr>
+<tr><td>Small daily budget (spend runs out by midday)</td><td>Exact</td><td>Spend the limited budget on the highest-intent searches</td><td>If clicks are too few, widen to phrase before raising bids</td></tr>
+<tr><td>Brand campaign</td><td>Exact + phrase on brand terms</td><td>Brand searches are predictable; broad can drift to competitors</td><td>Brand terms leaking into generic campaigns: add brand negatives there</td></tr>
+<tr><td>Discovering new keywords</td><td>Broad in a test campaign with a fixed budget</td><td>Mine the search terms report for new exact and phrase keywords</td><td>Move winners into the main campaign as exact; negative the junk</td></tr>
+</tbody>
+</table>
+<p>The "~30 conversions" figure is a working rule of thumb, not a Google limit. What you need is enough conversion data for bidding to tell good searches from bad ones. If your conversions are unreliable (form spam, duplicate calls, no offline import), fix that first with our <a href="/academy/google-ads-conversion-tracking/">conversion tracking guide</a>, because broad match learns from whatever you tell it is a conversion.</p>
+
+<h2 id="structure">A simple structure for lead gen and pay-per-call</h2>
+<p>You don't need a complicated structure. This one works for most local service, insurance and pay-per-call accounts:</p>
+<ul>
+<li><strong>Ad groups by theme, not by match type.</strong> Put "emergency plumber" keywords together whatever their match type, and keep "drain cleaning" in its own ad group. Splitting the same keyword into separate exact, phrase and broad ad groups (the old "SKAG" style) mostly splits your data now that close variants are so wide.</li>
+<li><strong>5 to 20 keywords per ad group</strong>, mixing exact for the top terms and phrase for the rest.</li>
+<li><strong>Your best converting searches as exact keywords</strong>, so prioritization sends them to the right ad.</li>
+<li><strong>A shared negative list</strong> applied to every campaign (jobs, salary, free, DIY, training, and so on).</li>
+<li><strong>Broad match tested in a separate campaign</strong> with its own budget, once tracking is solid. Compare its cost per lead against the main campaign after 2 to 4 weeks.</li>
+</ul>
+<p>Before you build the keyword list, work out what you can afford per lead. Run your numbers in the <a href="/academy/labs/max-cpl/">Max CPL lab</a>, then check whether your expected CPC leaves a profit in the <a href="/academy/labs/ppc-profit/">PPC Profit lab</a>. Those two numbers tell you how tight your match types need to be. If you buy calls, our <a href="/academy/keyword-research-for-pay-per-call/">keyword research for pay-per-call</a> guide shows how to sort keywords by intent first.</p>
+
+<h3>A weekly 15-minute match type review</h3>
+<ol>
+<li>Open the search terms report for the last 7 days, sorted by cost.</li>
+<li>Add irrelevant terms as negatives (campaign level or the shared list).</li>
+<li>Add converting terms you don't already have as exact keywords in the right ad group.</li>
+<li>Look at which keyword triggered each converting search. If a broad keyword is grabbing searches meant for a specific ad group, add the search as exact in that ad group.</li>
+<li>Note any change in a dated log so you can undo it if performance drops.</li>
+</ol>
+
+<h2 id="aimax">Broad match, AI Max and keywordless matching</h2>
+<p>Google keeps moving Search towards automation. Two features matter for match types:</p>
+<ul>
+<li><strong>The broad match campaign setting</strong> turns every keyword in a campaign into broad match without changing each keyword. Google says keywords in these campaigns are prioritized as if they were both exact and broad.</li>
+<li><strong>AI Max for Search campaigns</strong> adds "search term matching", which can show ads on searches without a matching keyword, based on your landing pages and assets. Reports show an "AI Max" match type and a source column that says whether a match came from broad match expansion or keywordless matching. You can switch search term matching off at ad group level.</li>
+</ul>
+<p>Both can find extra conversions, but they reduce your control even further. Treat them the way you'd treat broad match: switch them on only with reliable conversion tracking, a sensible target CPA or ROAS, strong negatives, and a weekly look at the search terms. Choosing the right bid strategy matters here too. Our <a href="/academy/google-ads-bidding-strategies/">bidding strategies guide</a> explains which one to pair with each setup.</p>
+
+<h2 id="mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Broad match with manual CPC and no negatives.</strong> This is the fastest way to waste a new account's budget.</li>
+<li><strong>Thinking exact means "exactly what I typed".</strong> Close variants and same-intent matching mean exact can still bring surprises.</li>
+<li><strong>Using old syntax.</strong> Broad match modifier (+word) was retired in 2021. Keywords written that way now behave as broad match.</li>
+<li><strong>Splitting every keyword into three ad groups.</strong> It fragments conversion data and rarely helps now.</li>
+<li><strong>Switching to broad before conversion tracking is clean.</strong> Broad match plus Smart Bidding learns from your conversions. If those include spam forms or 10-second calls, it will find more of them.</li>
+<li><strong>Adding negatives that block your own exact keywords.</strong> Check for conflicts after every negative list update.</li>
+<li><strong>Never reading the search terms report.</strong> Whatever match type you choose, this report is the only way to see what you actually paid for.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<h3>Which Google Ads match type is best for beginners?</h3>
+<p>Start with exact and phrase match. They limit waste while you learn what converts. Add broad match once you have reliable conversion tracking and enough conversions for Smart Bidding to work with.</p>
+<h3>Is broad match modifier still available?</h3>
+<p>No. Google retired it in 2021 and folded its behaviour into phrase match. Old +keyword entries now act as broad match, so convert them to phrase or exact.</p>
+<h3>Does exact match include plurals and misspellings?</h3>
+<p>Yes. Exact match covers close variants, including plurals, misspellings, abbreviations and searches with the same meaning or intent.</p>
+<h3>Should I use the same keyword in more than one match type?</h3>
+<p>You can, in the same ad group. The identical exact keyword will be preferred when the search matches it word for word, and the phrase or broad version picks up longer searches. Don't spread copies across separate ad groups unless you want different ads for them.</p>
+<h3>Does Google recommend broad match?</h3>
+<p>Yes. Google recommends broad match together with Smart Bidding for reach, and phrase or exact match where you have specific needs, such as sensitive verticals.</p>
+<h3>How often should I review match types?</h3>
+<p>Check the search terms report weekly. Change match types (for example, testing broad) only after 2 to 4 weeks of stable data, so you can compare like with like.</p>
+
+<h2 id="next">Next step</h2>
+<p>Match types, keyword research and negatives are covered step by step in our <a href="/academy/courses/google-ads-from-zero/">Google Ads From Zero course</a>. Once your keyword list is ready, write an ad that fits it in the <a href="/academy/labs/google-ad/">Google Ad lab</a>, and check your target cost per lead in the <a href="/academy/labs/max-cpl/">Max CPL lab</a> before you set bids.</p>

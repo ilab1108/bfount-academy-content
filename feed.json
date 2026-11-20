@@ -145,6 +145,17 @@
       "status": "published",
       "updated": "2026-11-18T09:30:00+05:30",
       "body_file": "articles/google-ads-conversion-tracking.html"
+    },
+    {
+      "slug": "google-ads-keyword-match-types",
+      "title": "Google Ads Keyword Match Types: Broad, Phrase, Exact",
+      "meta": "Learn how Google Ads broad, phrase and exact match work in 2026, how close variants and keyword priority affect you, and which match type to use when.",
+      "excerpt": "How broad, phrase and exact match really work today, which keyword wins when several match, and a decision matrix for choosing match types by budget, data and vertical.",
+      "category": "search",
+      "author": "BFOUNT Academy Team",
+      "status": "published",
+      "updated": "2026-11-20T14:10:00+05:30",
+      "body_file": "articles/google-ads-keyword-match-types.html"
     }
   ],
   "courses": [
